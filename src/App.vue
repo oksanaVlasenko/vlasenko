@@ -1,9 +1,16 @@
-<script setup>
+<script>
 import HelloWorld from './components/HelloWorld.vue'
+import ThemeButton from './components/ThemeButton.vue'
+
+export default {
+  components: { ThemeButton },
+}
 </script>
 
 <template>
-  <div>
+  <div class="container-center">
+    <ThemeButton />
+    
     <a href="https://vitejs.dev" target="_blank">
       <img src="/vite.svg" class="logo" alt="Vite logo" />
     </a>
