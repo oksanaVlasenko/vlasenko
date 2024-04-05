@@ -24,6 +24,9 @@ body {
   --accent-color: #cacaca;
   --text-primary-color: #222;
   --element-size: 4rem;
+  --background-color-reverse: #1e1e1e;
+  --text-reverse-color: #ddd;
+  --background-color-reverse-secondary: #2d2d30;
 }
 
 /* Define styles for the root window with dark - mode preference */
@@ -32,6 +35,9 @@ body {
   --background-color-secondary: #2d2d30;
   --accent-color: #3f3f3f;
   --text-primary-color: #ddd;
+  --background-color-reverse: #ebebeb;
+  --text-reverse-color: #222;
+  --background-color-reverse-secondary: #fafafa;
 }
 
 p {
