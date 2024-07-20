@@ -33,6 +33,7 @@ export default {
   methods: {
     toggleTheme() {
       const activeTheme = localStorage.getItem("user-theme");
+      
       if (activeTheme === "light-theme") {
         this.setTheme("dark-theme");
       } else {

@@ -40,7 +40,7 @@ body {
   --background-color-reverse-secondary: #fafafa;
 }
 
-p {
+p, h1 {
   color: var(--text-primary-color);
 }
 
