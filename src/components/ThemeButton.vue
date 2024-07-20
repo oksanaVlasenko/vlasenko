@@ -1,19 +1,29 @@
 <template>
-  <div>
-    <input
-      @change="toggleTheme"
-      id="checkbox"
-      type="checkbox"
-      class="switch-checkbox"
-    />
-    <label for="checkbox" class="switch-label">
-      <span>🌙</span>
-      <span>☀️</span>
-      <div
-        class="switch-toggle"
-        :class="{ 'switch-toggle-checked': userTheme === 'dark-theme' }"
-      ></div>
-    </label>
+  <div class="switcher">
+    <div class="pointer-events-auto">
+      <button
+        type="button"
+        aria-label="Switch to dark theme"
+        class="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
+        @click="toggleTheme"
+      >
+        <svg 
+          v-if="userTheme === 'dark'"
+          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" 
+          class="size-6 text-dark dark:text-white"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M21.752 15.002A9.72 9.72 0 0 1 18 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 0 0 3 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 0 0 9.002-5.998Z" />
+        </svg>
+
+        <svg 
+          v-else
+          xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" 
+          class="size-6 text-dark dark:text-white"
+        >
+          <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
+        </svg>
+      </button>
+    </div>
   </div>
 </template>
 
@@ -26,18 +36,18 @@ export default {
 
   data() {
     return {
-      userTheme: "light-theme",
+      userTheme: "light",
     };
   },
 
   methods: {
     toggleTheme() {
       const activeTheme = localStorage.getItem("user-theme");
-      
-      if (activeTheme === "light-theme") {
-        this.setTheme("dark-theme");
+
+      if (activeTheme === "light") {
+        this.setTheme("dark");
       } else {
-        this.setTheme("light-theme");
+        this.setTheme("light");
       }
     },
 
@@ -56,57 +66,17 @@ export default {
         "(prefers-color-scheme: dark)"
       ).matches;
       if (hasDarkPreference) {
-        return "dark-theme";
+        return "dark";
       } else {
-        return "light-theme";
+        return "light";
       }
     },
   },
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
-div {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-}
-
-.switch-checkbox {
-  display: none;
-}
-
-.switch-label {
-  align-items: center;
-  background: var(--text-primary-color);
-  border: calc(var(--element-size) * 0.025) solid var(--accent-color);
-  border-radius: var(--element-size);
-  cursor: pointer;
-  display: flex;
-  font-size: calc(var(--element-size) * 0.3);
-  height: calc(var(--element-size) * 0.35);
-  position: relative;
-  padding: calc(var(--element-size) * 0.1);
-  transition: background 0.5s ease;
-  justify-content: space-between;
-  width: var(--element-size);
-  z-index: 1;
-}
-
-.switch-toggle {
-  position: absolute;
-  background-color: var(--background-color-primary);
-  border-radius: 50%;
-  top: calc(var(--element-size) * 0.07);
-  left: calc(var(--element-size) * 0.07);
-  height: calc(var(--element-size) * 0.4);
-  width: calc(var(--element-size) * 0.4);
-  transform: translateX(0);
-  transition: transform 0.3s ease, background-color 0.5s ease;
-}
-
-.switch-toggle-checked {
-  transform: translateX(calc(var(--element-size) * 0.6)) !important;
+.switcher {
+  @apply absolute top-2 right-2;
 }
 </style>

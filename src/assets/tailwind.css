@@ -1,5 +1,53 @@
 @import "tailwindcss/base";
-@import '../style.css';
+/* @import '../style.css'; */
 
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+
+:root {
+  --background-color-primary: #ffffff; /* Light gray background */
+  --background-color-secondary: #ffffff; /* White background */
+  --accent-color: #3b82f6; /* Blue accent */
+  --text-primary-color: #111827; /* Dark gray text */
+  --element-size: 4rem; /* Same size for consistency */
+  --background-color-reverse: #18181b; /* Dark gray reverse background */
+  --text-reverse-color: #d1d5db; /* Light gray reverse text */
+  --background-color-reverse-secondary: #374151; /* Darker gray secondary reverse background */
+}
+
+:root.dark {
+  --background-color-primary: #18181b; /* Dark gray background */
+  --background-color-secondary: #374151; /* Darker gray background */
+  --accent-color: #3b82f6; /* Blue accent */
+  --text-primary-color: #d1d5db; /* Light gray text */
+  --background-color-reverse: #ffffff; /* Light gray reverse background */
+  --text-reverse-color: #111827; /* Dark gray reverse text */
+  --background-color-reverse-secondary: #ffffff; /* White reverse secondary background */
+}
+
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+}
+
+.container-center {
+  background-color: var(--background-color-primary);
+  height: 100vh;
+  width: 100vw;
+  padding: 0 1em;
+  margin: 0 auto;
+  text-align: center;
+  /* display: flex;
+  align-items: center;
+  justify-content: center; */
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
