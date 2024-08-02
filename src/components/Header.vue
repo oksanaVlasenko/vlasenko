@@ -1,7 +1,5 @@
 <template>
   <header class="w-full pt-2">
-    <ThemeButton />
-
     <Nav />
 
     <h1 class="title">Oksana Vlasenko</h1>
@@ -12,12 +10,10 @@
 </template>
 
 <script>
-import ThemeButton from './ThemeButton.vue'
 import Nav from './Nav.vue'
 
 export default {
   components: { 
-    ThemeButton,
     Nav
   }
 }
@@ -26,7 +22,7 @@ export default {
 <style scoped>
 h1 {
   @apply 
-    antialiased text-3xl text-center my-12;
+    antialiased text-3xl text-center mt-4;
     color: var(--text-primary-color);
 }
 
