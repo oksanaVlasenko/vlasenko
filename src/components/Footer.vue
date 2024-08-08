@@ -10,7 +10,8 @@ export default {
   
 }
 </script>
-<style lang="">
+
+<style>
   p {
     color: var(--text-primary-color);
   }
