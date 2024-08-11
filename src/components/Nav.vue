@@ -15,6 +15,14 @@
     >
       Work history
     </router-link>
+
+    <router-link 
+      to="/contact"
+      class="link"
+      exact-active-class="active"
+    >
+      Contact
+    </router-link>
   </div>
 </template>
 

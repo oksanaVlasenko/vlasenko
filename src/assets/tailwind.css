@@ -14,16 +14,20 @@
   --background-color-reverse: #18181b; /* Dark gray reverse background */
   --text-reverse-color: #d1d5db; /* Light gray reverse text */
   --background-color-reverse-secondary: #374151; /* Darker gray secondary reverse background */
+  --text-light-gray: #8f8f9d;
+  --text-dark-gray: #333333;
 }
 
 :root.dark {
   --background-color-primary: #18181b; /* Dark gray background */
-  --background-color-secondary: #374151; /* Darker gray background */
+  --background-color-secondary: #27272A; /* Darker gray background */
   --accent-color: #3b82f6; /* Blue accent */
   --text-primary-color: #d1d5db; /* Light gray text */
   --background-color-reverse: #ffffff; /* Light gray reverse background */
   --text-reverse-color: #111827; /* Dark gray reverse text */
   --background-color-reverse-secondary: #ffffff; /* White reverse secondary background */
+  --text-light-gray: #8f8f9d;
+  --text-dark-gray: #CCCCCC;
 }
 
 
@@ -78,3 +82,18 @@ body {
   min-width: 320px;
   min-height: 100vh;
 }
+
+.primary-btn {
+  @apply
+  bg-white dark:bg-zinc-800/90 shadow-md text-base leading-5 py-3.5 px-7 rounded-lg;
+  color: #2dd4bf;
+}
+
+h1 {
+  @apply 
+    antialiased text-2xl text-center my-7;
+    color: var(--text-primary-color);
+    position: relative;
+    width: 230px;
+}
+
