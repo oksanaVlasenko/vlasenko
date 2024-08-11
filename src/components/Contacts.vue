@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center justify-center flex-grow max-w-full overflow-x-hidden">
+  <div class="flex flex-col items-center justify-center flex-grow max-w-full overflow-x-hidden mt-6">
     <h2>Get in touch</h2>
     
     <div class="contact">
@@ -61,41 +61,125 @@
       <div class="contact-me">
         <p class="sub-title">Contact Me</p>
 
-        <form action="" class="contact__form">
+        <form 
+          ref="form"
+          class="contact__form" 
+          @submit.prevent="sendEmail" 
+        >
           <div class="contact__form-div">
-            <label for="" class="contact__form-tag">Name</label>
-            <input type="text" name="name" class="contact__form-input" placeholder="Insert your name" required="">
+            <label for="" class="contact__form-tag">
+              Name
+            </label>
+            
+            <input 
+              v-model="form.name" 
+              type="text" 
+              name="name" 
+              class="contact__form-input border border-gray-300 p-2 mb-4 focus:border-blue-500" 
+              placeholder="Insert your name" 
+              required=""
+            >
           </div>
           
           <div class="contact__form-div">
-            <label for="" class="contact__form-tag">Mail</label>
-            <input type="email" name="email" class="contact__form-input" placeholder="Insert your email" required="">
+            <label for="" class="contact__form-tag">
+              Mail
+            </label>
+            
+            <input 
+              v-model="form.email" 
+              type="email" 
+              name="email" 
+              class="contact__form-input" 
+              placeholder="Insert your email" 
+              required=""
+            >
           </div>
           
           <div class="contact__form-div contact__form-area">
-            <label for="" class="contact__form-tag">Message</label>
-            <textarea name="message" cols="30" rows="10" class="contact__form-input" placeholder="Write your message">
-
-            </textarea>
+            <label for="" class="contact__form-tag">
+              Message
+            </label>
+            
+            <textarea 
+              v-model="form.message" 
+              name="message" 
+              cols="30" 
+              rows="10" 
+              class="contact__form-input" 
+              placeholder="Write your message"
+            />
           </div>
           
-          <button class="button button--flex">
+          <button type="submit" class="button button--flex">
             Send Message
+
+            <svg 
+              v-if="isPending"
+              class="animate-spin h-5 w-5 ml-3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1024 1024"><path d="M512 1024c-69.1 0-136.2-13.5-199.3-40.2C251.7 958 197 921 150 874c-47-47-84-101.7-109.8-162.7C13.5 648.2 0 581.1 0 512c0-19.9 16.1-36 36-36s36 16.1 36 36c0 59.4 11.6 117 34.6 171.3c22.2 52.4 53.9 99.5 94.3 139.9c40.4 40.4 87.5 72.2 139.9 94.3C395 940.4 452.6 952 512 952c59.4 0 117-11.6 171.3-34.6c52.4-22.2 99.5-53.9 139.9-94.3c40.4-40.4 72.2-87.5 94.3-139.9C940.4 629 952 571.4 952 512c0-59.4-11.6-117-34.6-171.3a440.45 440.45 0 0 0-94.3-139.9a437.71 437.71 0 0 0-139.9-94.3C629 83.6 571.4 72 512 72c-19.9 0-36-16.1-36-36s16.1-36 36-36c69.1 0 136.2 13.5 199.3 40.2C772.3 66 827 103 874 150c47 47 83.9 101.8 109.7 162.7c26.7 63.1 40.2 130.2 40.2 199.3s-13.5 136.2-40.2 199.3C958 772.3 921 827 874 874c-47 47-101.8 83.9-162.7 109.7c-63.1 26.8-130.2 40.3-199.3 40.3z" fill="currentColor"></path></svg>
+            
+            <svg 
+              v-else
+              class="h-5 w-5 ml-3" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 24 24"><path d="M3.4 20.4l17.45-7.48a1 1 0 0 0 0-1.84L3.4 3.6a.993.993 0 0 0-1.39.91L2 9.12c0 .5.37.93.87.99L17 12L2.87 13.88c-.5.07-.87.5-.87 1l.01 4.61c0 .71.73 1.2 1.39.91z" fill="currentColor"></path></svg>
           </button>
         </form>
       </div>
     </div>
   </div>
 </template>
+
 <script>
+import emailjs from '@emailjs/browser'
+
 export default {
-  
+  name: 'ContactView',
+
+  data() {
+    return {
+      form: {
+        name: '',
+        email: '',
+        message: ''
+      },
+
+      isPending: false
+    }
+  },
+
+  methods: {
+    async sendEmail() {
+      this.isPending = true
+
+      emailjs.sendForm('service_v3gop1n', 'template_ozifuu4', this.$refs.form, {
+        publicKey: '7qoRHeuM-5wpKZr3r',
+      })
+        .then(response => {
+          console.log('Email sent successfully:', response);
+        })
+        .catch(error => {
+          console.error('Failed to send email:', error);
+        })
+        .finally(() => {
+          this.isPending = false
+
+          this.form.name = ''
+          this.form.email = ''
+          this.form.message = ''
+        })
+    }
+  },
 }
 </script>
 <style>
+.required::after {
+      content: "*";
+      color: red;
+      margin-left: 0.2rem;
+    }
+    
   .contact {
     @apply 
-      rounded-lg bg-white dark:bg-zinc-800/90 shadow-md min-h-[40vh] lg:w-[120vh] lg:grid lg:grid-cols-[50%_50%] h-auto w-full flex flex-col justify-center my-4;
+      rounded-lg bg-white dark:bg-zinc-800/90 shadow-md min-h-[40vh] lg:w-[120vh] lg:grid lg:grid-cols-[50%_50%] h-auto w-full flex flex-col-reverse justify-center my-4;
   }
 
   h2 {
