@@ -75,7 +75,7 @@
               v-model="form.name" 
               type="text" 
               name="name" 
-              class="contact__form-input border border-gray-300 p-2 mb-4 focus:border-blue-500" 
+              class="contact__form-input border" 
               placeholder="Insert your name" 
               required=""
             >
@@ -171,12 +171,6 @@ export default {
 }
 </script>
 <style>
-.required::after {
-      content: "*";
-      color: red;
-      margin-left: 0.2rem;
-    }
-    
   .contact {
     @apply 
       rounded-lg bg-white dark:bg-zinc-800/90 shadow-md min-h-[40vh] lg:w-[120vh] lg:grid lg:grid-cols-[50%_50%] h-auto w-full flex flex-col-reverse justify-center my-4;
