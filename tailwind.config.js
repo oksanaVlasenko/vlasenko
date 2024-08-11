@@ -10,16 +10,17 @@ export default {
       sans: ['Graphik', 'sans-serif'],
       serif: ['Merriweather', 'serif'],
     },
-    fontSize: {
-      '2xl': ['2em', {
-        letterSpacing: '-0.02em',
-        fontWeight: '600',
-      }],
-      '3xl': ['2.5em', {
-        letterSpacing: '-0.02em',
-        fontWeight: '700',
-      }]
-    },
+    // fontSize: {
+    //   '2xl': ['2em', {
+    //     letterSpacing: '-0.02em',
+    //     fontWeight: '600',
+    //   }],
+    //   '3xl': ['2.5em', {
+    //     letterSpacing: '-0.02em',
+    //     fontWeight: '700',
+    //   }],
+
+    // },
     extend: {},
   },
   plugins: [],

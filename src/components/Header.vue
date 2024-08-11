@@ -2,9 +2,7 @@
   <header class="w-full pt-2">
     <Nav />
 
-    <h1 class="title">Oksana Vlasenko</h1>
-
-    <h2>Senior Frontend Developer</h2>
+    
 
   </header>
 </template>

@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center flex-grow">
+  <div class="flex flex-col items-center justify-center flex-grow max-w-full overflow-x-hidden">
     <Card />
   </div>
 </template>
