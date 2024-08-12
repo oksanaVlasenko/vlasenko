@@ -6,6 +6,7 @@
 
 
 :root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   --background-color-primary: #ffffff; /* Light gray background */
   --background-color-secondary: #ffffff; /* White background */
   --accent-color: #3b82f6; /* Blue accent */
@@ -19,6 +20,7 @@
 }
 
 :root.dark {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   --background-color-primary: #18181b; /* Dark gray background */
   --background-color-secondary: #27272A; /* Darker gray background */
   --accent-color: #3b82f6; /* Blue accent */
