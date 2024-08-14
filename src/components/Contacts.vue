@@ -11,7 +11,7 @@
           
           <p class="name">Linkedin</p>
 
-          <p class="link">https://www.linkedin.com/in/oksana-vlasenko-28b53919b/</p>
+          <p class="text-link">https://www.linkedin.com/in/oksana-vlasenko-28b53919b/</p>
 
           <a 
             class="icon-btn"
@@ -28,7 +28,7 @@
           
           <p class="name">Email</p>
 
-          <p class="link">vlasenkoksenia642@gmail.com</p>
+          <p class="text-link">vlasenkoksenia642@gmail.com</p>
 
           <a 
             class="icon-btn"
@@ -45,7 +45,7 @@
           
           <p class="name">Telegram</p>
 
-          <p class="link">@kseniaVlasenko</p>
+          <p class="text-link">@kseniaVlasenko</p>
 
           <a 
             class="icon-btn"
@@ -212,7 +212,7 @@ export default {
     /* //color: var(----text-reverse-color); */
   }
 
-  .link {
+  .text-link {
     /* padding-bottom: .5rem; */
     color: var(--text-light-gray);
     cursor: pointer;
