@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center justify-center flex-grow max-w-full overflow-x-hidden mt-6">
+  <div class="flex flex-col items-center justify-center flex-grow max-w-full overflow-x-hidden mt-6 pt-9">
     <h2>Work history</h2>
 
     <div class="work-history">
