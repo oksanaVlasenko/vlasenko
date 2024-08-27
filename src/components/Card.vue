@@ -70,8 +70,8 @@
           <p class="text-left px-4 mb-4">
             I'm a <strong>software developer</strong> with 4+ years of web development. 
             I'm proficient in JavaScript, Vue 2, and have worked with Vue 3, 
-            Node, Express, and TypeScript. <br /> <br />
-            I started to work with React, but Vue stole my heart. 
+            Node, Express, Tailwind, TypeScript etc. <br /> <br />
+            I started to work with React, but Vue's stolen my heart. 
             I have been working with Vue 2 over 3 years. <br /> <br />
             <strong>My goal</strong> is delivering the best possible user experience, performance, and intuitiveness in the products I develop. <br /> <br />
             <strong>My key points</strong> are carefully assess every detail of the design and user scenarios, pay attention for performance issues,
@@ -97,7 +97,7 @@
             - I'm <strong>passion</strong> about my profession
           
             <br /> <br />
-            <strong>English:</strong>C1 - Advanced <br />
+            <strong>English:</strong> C1 - Advanced <br />
             
             <strong>Psychotype:</strong> 
             <a href="https://www.16personalities.com/profiles/1d069ba9ab5f9" target="_blank">

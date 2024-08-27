@@ -232,6 +232,7 @@ export default {
     svg {
       margin-left: 0.5rem;
       width: 16px;
+      padding-top: 4px;
     } 
   }
 

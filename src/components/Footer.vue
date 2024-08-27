@@ -14,5 +14,7 @@ export default {
 <style>
   p {
     color: var(--text-primary-color);
+    font-size: small;
+    padding-bottom: .5rem;
   }
 </style>
