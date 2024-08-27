@@ -104,10 +104,26 @@
 
 <script>
 import GithubActivity from './GithubActivity.vue';
+import pdfUrl from '../assets/CV_Oksana_Vlasenko.pdf'
 
 export default {
   components: {
     GithubActivity
+  },
+
+  data() {
+    return {
+      pdfUrl
+    }
+  },
+
+  methods: {
+    downloadPDF() {
+      const link = document.createElement('a');
+      link.href = this.pdfUrl;
+      link.download = 'CV_Oksana_Vlasenko.pdf';
+      link.click();
+    }
   }
 }
 </script>

@@ -70,7 +70,7 @@
           <p class="text-left px-4 mb-4">
             I'm a <strong>software developer</strong> with 4+ years of web development. 
             I'm proficient in JavaScript, Vue 2, and have worked with Vue 3, 
-            Node, Express, Tailwind, TypeScript etc. <br /> <br />
+            Node.js, Express.js, Tailwind CSS, TypeScript etc. <br /> <br />
             I started to work with React, but Vue's stolen my heart. 
             I have been working with Vue 2 over 3 years. <br /> <br />
             <strong>My goal</strong> is delivering the best possible user experience, performance, and intuitiveness in the products I develop. <br /> <br />
@@ -118,7 +118,7 @@
 </template>
 
 <script>
-import pdfUrl from '../assets/Vlasenko_CV.pdf'
+import pdfUrl from '../assets/CV_Oksana_Vlasenko.pdf'
 
 export default {
   name: 'CardAbout',
@@ -138,7 +138,7 @@ export default {
     downloadPDF() {
       const link = document.createElement('a');
       link.href = this.pdfUrl;
-      link.download = 'Vlasenko_CV.pdf';
+      link.download = 'CV_Oksana_Vlasenko.pdf';
       link.click();
     }
   }

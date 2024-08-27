@@ -11,7 +11,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
   p {
     color: var(--text-primary-color);
     font-size: small;
