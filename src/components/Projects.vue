@@ -7,7 +7,7 @@
         <div class="logo">
           <img 
             alt="logo"
-            src="../assets/logo-fixiq.png"
+            src="@/assets/logo-fixiq.png"
           />
         </div>
 
@@ -28,7 +28,7 @@
         <div class="logo">
           <img 
             alt="logo"
-            src="../assets/medstar-logo.png"
+            src="@/assets/medstar-logo.png"
           />
         </div>
 
@@ -69,7 +69,7 @@
         <div class="logo">
           <img 
             alt="logo"
-            src="../assets/varion.png"
+            src="@/assets/varion.png"
           />
         </div>
 
@@ -103,8 +103,8 @@
 </template>
 
 <script>
-import GithubActivity from './GithubActivity.vue';
-import pdfUrl from '../assets/CV_Oksana_Vlasenko.pdf'
+import GithubActivity from '@/components/GithubActivity.vue';
+import pdfUrl from '@/assets/CV_Oksana_Vlasenko.pdf'
 
 export default {
   components: {

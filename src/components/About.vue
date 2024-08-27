@@ -4,7 +4,7 @@
   </div>
 </template>
 <script>
-import Card from './Card.vue'
+import Card from '@/components/Card.vue'
 
 export default {
   components: {

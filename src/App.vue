@@ -11,9 +11,9 @@
 </template>
 
 <script>
-import Header from './components/Header.vue'
-import ThemeButton from './components/ThemeButton.vue'
-import Footer from './components/Footer.vue'
+import Header from '@/components/Header.vue'
+import ThemeButton from '@/components/ThemeButton.vue'
+import Footer from '@/components/Footer.vue'
 
 export default {
   components: { 

@@ -5,7 +5,7 @@
         <img 
           alt="avatar"
           class="avatar"
-          src="../assets/avatar.jpg"
+          src="@/assets/avatar.jpg"
         />
       </div>
       
@@ -118,7 +118,7 @@
 </template>
 
 <script>
-import pdfUrl from '../assets/CV_Oksana_Vlasenko.pdf'
+import pdfUrl from '@/assets/CV_Oksana_Vlasenko.pdf'
 
 export default {
   name: 'CardAbout',

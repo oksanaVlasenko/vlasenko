@@ -1,14 +1,11 @@
 <template>
   <header class="w-full pt-2">
     <Nav />
-
-    
-
   </header>
 </template>
 
 <script>
-import Nav from './Nav.vue'
+import Nav from '@/components/Nav.vue'
 
 export default {
   components: { 
