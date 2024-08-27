@@ -99,3 +99,7 @@ h1 {
     width: 230px;
 }
 
+p {
+  color: var(--text-primary-color);
+}
+
