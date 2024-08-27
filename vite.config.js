@@ -4,7 +4,7 @@ import { fileURLToPath, URL } from 'node:url'
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/vlasenko/',
+  base: process.env.NODE_ENV.BASE,
   
   plugins: [vue()],
   resolve: {
