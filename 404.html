@@ -1,9 +1,15 @@
 <!DOCTYPE html>
 <html>
-<head>
-  <meta http-equiv="refresh" content="0; url=/vlasenko/">
-</head>
-<body>
-  <p>If you are not redirected automatically, follow this <a href="/vlasenko/">link to the homepage</a>.</p>
-</body>
+  <head>
+    <script type="text/javascript">
+      var currentLocation = window.location.href;
+      var origin = window.location.origin;
+      var path = window.location.pathname.replace('/vlasenko', ''); 
+
+      window.location.replace(origin + '/vlasenko/index.html#' + path);
+    </script>
+  </head>
+  <body>
+    <p>If you are not redirected automatically, follow this <a id="redirect-link" href="/vlasenko/">link to the homepage</a>.</p>
+  </body>
 </html>
