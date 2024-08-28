@@ -33,6 +33,7 @@ const router = createRouter({
 })
 
 router.beforeEach((to) => {
+  console.log(process.env.NODE_ENV, ' process.env.NODE_ENV')
   document.title = to.meta.title || 'Oksana Vlasenko'
 })
 

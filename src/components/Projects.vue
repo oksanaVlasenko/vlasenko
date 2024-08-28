@@ -87,7 +87,7 @@
       </div>  
 
       <button 
-        class="primary-btn mt-6 icon-btn"
+        class="primary-btn mt-6 download-btn"
         @click="downloadPDF"
       >
         Download CV
@@ -135,7 +135,7 @@ export default {
     color: var(--text-primary-color);
   }
 
-  .icon-btn {
+  .download-btn {
     @apply
       flex justify-center items-center w-fit;
       color: #2dd4bf;
