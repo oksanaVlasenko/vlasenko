@@ -44,5 +44,6 @@ td.ContributionCalendar-label span[aria-hidden='true'] {
 .graph-before-activity-overview {
   @apply 
   rounded-lg bg-white dark:bg-zinc-800/90 shadow-md min-h-[40vh] lg:w-[120vh] h-auto w-full flex flex-col justify-center my-4;
+  border: none;
 }
 </style>
