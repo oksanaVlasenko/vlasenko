@@ -2,10 +2,11 @@
 <html>
   <head>
     <script type="text/javascript">
-      var currentLocation = window.location.href;
+      // Extract the current URL path, removing the base path '/vlasenko'
       var origin = window.location.origin;
-      var path = window.location.pathname.replace('/vlasenko', ''); 
+      var path = window.location.pathname.replace(/^\/vlasenko\//, ''); // Remove the leading '/vlasenko/' from the path
 
+      // Redirect to the base path with the correct path, avoiding multiple slashes
       window.location.replace(origin + '/vlasenko/' + path);
     </script>
   </head>
