@@ -6,13 +6,19 @@
         var origin = window.location.origin;
         var currentPath = window.location.pathname;
 
+        // Debugging: Log current path and intended actions
+        console.log("Current Path:", currentPath);
+
         // Only redirect if the path is not already prefixed correctly
         if (!currentPath.startsWith('/vlasenko/')) {
           // Extract the path after the domain and remove any leading slashes
           var newPath = currentPath.replace(/^\//, ''); 
+          console.log("Redirecting to:", origin + '/vlasenko/' + newPath); // Debugging log
 
           // Redirect to the correct base path with the new path
           window.location.replace(origin + '/vlasenko/' + newPath);
+        } else {
+          console.log("Path already correct. No redirection needed.");
         }
       })();
     </script>
