@@ -2,12 +2,19 @@
 <html>
   <head>
     <script type="text/javascript">
-      // Extract the current URL path, removing the base path '/vlasenko'
-      var origin = window.location.origin;
-      var path = window.location.pathname.replace(/^\/vlasenko\//, ''); // Remove the leading '/vlasenko/' from the path
+      (function() {
+        var origin = window.location.origin;
+        var currentPath = window.location.pathname;
 
-      // Redirect to the base path with the correct path, avoiding multiple slashes
-      window.location.replace(origin + '/vlasenko/' + path);
+        // Only redirect if the path is not already prefixed correctly
+        if (!currentPath.startsWith('/vlasenko/')) {
+          // Extract the path after the domain and remove any leading slashes
+          var newPath = currentPath.replace(/^\//, ''); 
+
+          // Redirect to the correct base path with the new path
+          window.location.replace(origin + '/vlasenko/' + newPath);
+        }
+      })();
     </script>
   </head>
   <body>
