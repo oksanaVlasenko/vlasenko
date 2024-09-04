@@ -1,5 +1,5 @@
 <template>
-  <header class="w-full pt-2">
+  <header class="w-full">
     <NewNav />
   </header>
 </template>

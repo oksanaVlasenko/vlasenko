@@ -1,5 +1,4 @@
 <template>
-  <div>
     <div class="navbar-wrap">
       <div class="nav-switcher">
         <span 
@@ -11,6 +10,31 @@
 
         <ThemeButton />
       </div>
+
+      <nav class="hidden lg:flex lg:justify-center">
+        <ul>
+          <li 
+            v-for="link in links"
+            :key="link.text"
+            class="link"
+          >
+            <router-link 
+              :to="link.to"
+              exact-active-class="active"
+              class="flex"
+              @click="isMenuOpen = false"
+            >
+              <svg
+                class="nav-link-icon"
+              >
+                <use :xlink:href="`#${link.icon}`"></use>
+              </svg>
+              
+              {{ link.text }}
+            </router-link>
+          </li>
+        </ul>
+      </nav>
 
       <div class="nav-icons custom-svg-spacing">
         <a
@@ -41,7 +65,6 @@
         </a>
       </div>
 
-  {{ contactIcon }}
       <div 
         class="nav-button"
         @click="isMenuOpen = !isMenuOpen"
@@ -71,9 +94,14 @@
               <router-link 
                 :to="link.to"
                 exact-active-class="active"
+                class="flex"
                 @click="isMenuOpen = false"
               >
-                <img :src="getIconPath(link.icon)" alt="" class="nav-link-icon" />
+                <svg
+                  class="nav-link-icon"
+                >
+                  <use :xlink:href="`#${link.icon}`"></use>
+                </svg>
                 
                 {{ link.text }}
               </router-link>
@@ -83,17 +111,11 @@
       </div>
       </transition>
       
-    </div>
-
-   
-  </div>
+    </div>   
 </template>
 
 <script>
 import ThemeButton from '@/components/ThemeButton.vue'
-import projectIcon from '@/assets/icons/project.svg';
-import aboutIcon from '@/assets/icons/about.svg';
-import contactIcon from '@/assets/icons/contact.svg';
 
 export default {
   components: {
@@ -105,25 +127,17 @@ export default {
       isMenuOpen: false,
       isSmallScreen: false,
       links: [
-        { to: '/', text: 'About me', icon: 'about' },
+        { to: '/', text: 'Home', icon: 'home' },
+        { to: '/about', text: 'About me', icon: 'about' },
         { to: '/work-history', text: 'Work history', icon: 'project' },
         { to: '/contact', text: 'Contact', icon: 'contact' }
-      ],
-      iconMap: {
-        project: projectIcon,
-        about: aboutIcon,
-        contact: contactIcon,
-      }
+      ]
     }
   },
 
   methods: {
     checkScreenSize() {
       this.isSmallScreen = window.matchMedia('(max-width: 640px)').matches
-    },
-
-    getIconPath(iconName) {
-      return this.iconMap[iconName]
     }
   },
 
@@ -157,15 +171,15 @@ export default {
 <style>
   .navbar-wrap {
     @apply 
-      w-full h-full flex flex-row justify-between mt-4;
+     relative w-full h-full flex flex-row justify-between pt-4 md:sticky md:top-0 lg:flex-col lg:border-r-2 lg:border-[var(--text-primary-color)];
   }
 
   .nav-switcher {
-    @apply flex;
+    @apply flex lg:justify-center;
   }
 
   .nav-button {
-    @apply cursor-pointer mr-4 bg-[var(--background-color-reverse)] h-fit p-2.5;
+    @apply cursor-pointer mr-4 bg-[var(--background-color-reverse)] h-fit p-2.5 lg:hidden;
   }
 
   .nav-burger-svg {
@@ -173,25 +187,25 @@ export default {
   }
 
   .nav-brand {
-    @apply text-4xl text-[var(--text-primary-color)] pt-2.5 ml-4 cursor-pointer;
+    @apply text-4xl text-[var(--text-primary-color)] pt-2.5 ml-4 cursor-pointer lg:text-6xl;
     font-family: var(--font-family--display);
   }
 
   .link {
-    @apply relative p-2.5 text-gray-800 dark:text-gray-200 transition-colors duration-300 hover:text-[var(--text-primary-color)];
+    @apply relative p-2.5 text-gray-800 dark:text-gray-200 transition-colors duration-300 text-[var(--color--gray-1)] hover:text-[var(--text-primary-color)] lg:text-xl lg:p-5;
   }
 
   .active {
-    @apply relative inline-block text-[var(--color--gray-1)];
-  }
+    @apply flex text-[var(--color--gray-1)] dark:text-[var(--color--gray-1)];
 
-  /* .custom-svg-spacing a:not(:last-child) {
-    margin-right: 3vh;
-  } */
+    svg {
+      fill: var(--color--gray-1);
+    }
+  }
 
   .nav-icons {
     @apply 
-      hidden sm:flex flex-row justify-center items-start cursor-pointer border-solid border-l-0 border-b-0 border-r-2 border-t-2 border-[var(--text-primary-color)];
+      hidden sm:flex flex-row justify-center lg:justify-around items-start cursor-pointer border-solid border-l-0 border-b-0 border-r-2 lg:border-r-0 lg:border-b-2 border-t-2 border-[var(--text-primary-color)];
     
     svg {
       stroke: var(--text-primary-color);
@@ -199,7 +213,7 @@ export default {
   }
 
   .nav-media-link {
-    @apply border-l-2 border-b-2 border-[var(--text-primary-color)] p-2.5;
+    @apply border-l-2 border-b-2 border-[var(--text-primary-color)] p-2.5 lg:border-0 lg:py-2.5 lg:px-8 lg:relative lg:after:content-[''] lg:after:absolute lg:after:right-0 lg:after:top-0 lg:after:bottom-0 lg:after:w-0.5 lg:after:bg-[var(--text-primary-color)] lg:last:after:content-none;
   }
 
   .nav-overlay {
@@ -211,9 +225,7 @@ export default {
   .nav-link-icon {
     width: 24px;
     height: 24px;
-
-    svg {
-      fill: var(--text-primary-color);
-    }
+    fill: var(--text-primary-color);
+    margin-right: 1rem;
   }
 </style>

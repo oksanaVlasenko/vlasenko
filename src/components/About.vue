@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-col items-center justify-center flex-grow max-w-full overflow-x-hidden pt-9">
+  <div class="about-page">
     <Card />
   </div>
 </template>
@@ -15,5 +15,11 @@ export default {
 <style>
   h4 {
     font-family: var(--font-family--display);
+  }
+
+  .about-page {
+    width: auto;
+    height: auto;
+    overflow: hidden;
   }
 </style>
