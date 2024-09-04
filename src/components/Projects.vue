@@ -193,7 +193,7 @@ export default {
     font-size: .8rem;
   }
 
-  span {
+  /* span {
     display: inline-block;
     padding: 6px 12px;
     border-radius: 50px;
@@ -205,5 +205,5 @@ export default {
     font-size: 12px;
     background-color: var(--background-color-reverse);
     color: var(--text-light-gray);
-  }
+  } */
 </style>

@@ -1,3 +1,6 @@
+@import url('https://fonts.googleapis.com/css2?family=Yatra+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Flex:opsz,wght@8..144,100..1000&family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 @import "tailwindcss/base";
 /* @import '../style.css'; */
 
@@ -6,30 +9,42 @@
 
 
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  --background-color-primary: #ffffff; /* Light gray background */
-  --background-color-secondary: #ffffff; /* White background */
-  --accent-color: #3b82f6; /* Blue accent */
-  --text-primary-color: #111827; /* Dark gray text */
-  --element-size: 4rem; /* Same size for consistency */
-  --background-color-reverse: #18181b; /* Dark gray reverse background */
-  --text-reverse-color: #d1d5db; /* Light gray reverse text */
-  --background-color-reverse-secondary: #374151; /* Darker gray secondary reverse background */
+  /* --background-color-primary: #ffffff; 
+  --background-color-secondary: #ffffff;
+  --accent-color: #3b82f6; 
+  --text-primary-color: #111827; 
+  --element-size: 4rem; 
+  --background-color-reverse: #18181b;
+  --text-reverse-color: #d1d5db;
+  --background-color-reverse-secondary: #374151; 
   --text-light-gray: #8f8f9d;
-  --text-dark-gray: #333333;
+  --text-dark-gray: #333333; */
+  --background-color-primary: #e1e7d9;
+  --background-color-reverse: #363535;
+  --text-primary-color: #363535;
+  --font-family--display: "Yatra One", sans-serif;
+  --font-family--body: "Roboto Flex", sans-serif;
+  --font-family--heading: "Work Sans", sans-serif;
+  --color--gray-1: #686868;
 }
 
 :root.dark {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
-  --background-color-primary: #18181b; /* Dark gray background */
-  --background-color-secondary: #27272A; /* Darker gray background */
-  --accent-color: #3b82f6; /* Blue accent */
-  --text-primary-color: #d1d5db; /* Light gray text */
-  --background-color-reverse: #ffffff; /* Light gray reverse background */
-  --text-reverse-color: #111827; /* Dark gray reverse text */
-  --background-color-reverse-secondary: #ffffff; /* White reverse secondary background */
+  /* --background-color-primary: #18181b; 
+  --background-color-secondary: #27272A; 
+  --accent-color: #3b82f6; 
+  --text-primary-color: #d1d5db;
+  --background-color-reverse: #ffffff; 
+  --text-reverse-color: #111827; 
+  --background-color-reverse-secondary: #ffffff;
   --text-light-gray: #8f8f9d;
-  --text-dark-gray: #CCCCCC;
+  --text-dark-gray: #CCCCCC; */
+  --background-color-primary: #363535;
+  --background-color-reverse: #e1e7d9;
+  --text-primary-color: #e1e7d9;
+  --font-family--display: "Yatra One", sans-serif;
+  --font-family--body: "Roboto Flex", sans-serif;
+  --font-family--heading: "Work Sans", sans-serif;
+  --color--gray-1: #686868;
 }
 
 
@@ -45,7 +60,7 @@
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
-  background: #2dd4bf;
+  background: var(--text-primary-color);
   border-radius: 5px;
 }
 
@@ -58,6 +73,7 @@ html,
 body {
   padding: 0;
   margin: 0;
+  overflow-x: hidden;
 }
 
 body {

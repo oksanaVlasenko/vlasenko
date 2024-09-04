@@ -6,10 +6,10 @@ export default {
     "./src/**/*.{vue,js,ts,jsx,tsx}",
   ],
   theme: {
-    fontFamily: {
-      sans: ['Graphik', 'sans-serif'],
-      serif: ['Merriweather', 'serif'],
-    },
+    // fontFamily: {
+    //   sans: ['Graphik', 'sans-serif'],
+    //   serif: ['Merriweather', 'serif'],
+    // },
     // fontSize: {
     //   '2xl': ['2em', {
     //     letterSpacing: '-0.02em',
@@ -21,7 +21,12 @@ export default {
     //   }],
 
     // },
-    extend: {},
+    extend: {
+      colors: {
+        customDarkGray: '#363535',
+        customLightGray: '#e1e7d9',
+      }
+    },
   },
   plugins: [],
 }

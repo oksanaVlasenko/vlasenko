@@ -4,12 +4,12 @@
       <button
         type="button"
         aria-label="Switch to dark theme"
-        class="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:ring-white/10 dark:hover:ring-white/20"
+        class="group rounded-ful px-3 py-2"
         @click="toggleTheme"
       >
         <svg 
           v-if="userTheme === 'dark'"
-          class="size-6 text-white dark:text-dark"
+          class="size-8 text-customLightGray dark:text-dark"
           viewBox="0 0 24 24" aria-hidden="true"
           stroke="currentColor" 
           fill="none"
@@ -20,7 +20,7 @@
         <svg 
           v-else
           xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" 
-          class="size-6 text-dark dark:text-white"
+          class="size-8 text-customDarkGray dark:text-customLightGray"
         >
           <path stroke-linecap="round" stroke-linejoin="round" d="M12 3v2.25m6.364.386-1.591 1.591M21 12h-2.25m-.386 6.364-1.591-1.591M12 18.75V21m-4.773-4.227-1.591 1.591M5.25 12H3m4.227-4.773L5.636 5.636M15.75 12a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0Z" />
         </svg>
@@ -78,7 +78,7 @@ export default {
 </script>
 
 <style scoped>
-.switcher {
-  @apply absolute top-2 right-2;
-}
+/* .switcher {
+  @apply absolute top-2.5 left-1/2;
+} */
 </style>

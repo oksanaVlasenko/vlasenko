@@ -153,14 +153,7 @@ export default {
       /* //height: 50vh; lg:h-[50vh] lg:w-[100vh] */
   }
 
-  .icons {
-    @apply 
-      flex flex-row justify-center items-start cursor-pointer mt-6 mb-6;
-    
-    svg {
-      stroke: #2dd4bf;
-    }
-  }
+  
 
   .info {
     @apply
@@ -177,9 +170,7 @@ export default {
       size-40 rounded-full shadow-md shadow-gray-400 dark:shadow-teal-400 mt-4;
   }
 
-  .custom-svg-spacing a:not(:last-child) {
-    margin-right: 3vh;
-  }
+  
 
   .icons-btn {
     @apply

@@ -12,6 +12,8 @@ export default {
   }
 }
 </script>
-<style scoped>
-  
+<style>
+  h4 {
+    font-family: var(--font-family--display);
+  }
 </style>

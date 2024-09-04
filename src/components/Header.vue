@@ -1,15 +1,15 @@
 <template>
   <header class="w-full pt-2">
-    <Nav />
+    <NewNav />
   </header>
 </template>
 
 <script>
-import Nav from '@/components/Nav.vue'
+import NewNav from '@/components/NewNav.vue'
 
 export default {
   components: { 
-    Nav
+    NewNav
   }
 }
 </script>
