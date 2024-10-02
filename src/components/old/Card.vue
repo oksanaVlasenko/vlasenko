@@ -165,10 +165,6 @@ export default {
       w-full flex flex-row justify-evenly items-center lg:flex-col lg:justify-center lg:border-r lg:border-r-teal-400;
   }
 
-  .avatar {
-    @apply 
-      size-40 rounded-full shadow-md shadow-gray-400 dark:shadow-teal-400 mt-4;
-  }
 
   
 

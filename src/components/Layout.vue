@@ -1,17 +1,18 @@
 <template>
   <div>
-    
-
     <div ref="blurContainer" class="gradient-background">
       <div v-for="n in 3" :key="n" class="blur"></div>
     </div>
 
     <Header />
+
+    <Avatar />
   </div>
 </template>
 
 <script setup>
 import Header from '@/components/Header.vue'
+import Avatar from '@/components/Avatar.vue'
 
 import { ref, onMounted } from 'vue';
 
