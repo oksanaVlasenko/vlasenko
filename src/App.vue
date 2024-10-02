@@ -1,21 +1,25 @@
 <template>
-  <div class="flex w-full flex-col min-h-screen container-center">    
-    <Header />
+  <Loader v-if="!isLoaded"/>
 
-    <router-view />
-  </div>
+  <Layout v-else />
 </template>
 
-<script>
-import Header from '@/components/Header.vue'
+<script setup>
+import Loader from '@/components/Loader.vue'
+import Layout from '@/components/Layout.vue'
 
-export default {
-  components: { 
-    Header,
-  }
+import { ref, onMounted } from 'vue'
+
+const isLoaded = ref(false)
+
+const startLoader = () => {
+  setTimeout(() => {
+    isLoaded.value = true
+  }, 1500)
 }
+
+onMounted(() => {
+  startLoader()
+})
 </script>
 
-<style>
-
-</style>

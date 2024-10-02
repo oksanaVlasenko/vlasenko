@@ -171,7 +171,7 @@ export default {
 <style>
   .navbar-wrap {
     @apply 
-     relative w-full h-full flex flex-row justify-between pt-4 md:sticky md:top-0 lg:flex-col lg:border-r-2 lg:border-[var(--text-primary-color)];
+     relative w-full h-full flex flex-row justify-between pt-4 md:sticky md:top-0 lg:sticky lg:flex-col lg:border-r-2 lg:border-[var(--text-primary-color)];
   }
 
   .nav-switcher {

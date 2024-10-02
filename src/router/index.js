@@ -4,7 +4,7 @@ const routes = [
   { 
     path: '/', 
     name: 'Home', 
-    component: () => import('@/components/Home.vue'),
+    component: () => import('@/components/old/Home.vue'),
     meta: { 
       title: 'Home | Oksana Vlasenko' 
     }  
@@ -12,7 +12,7 @@ const routes = [
   { 
     path: '/about', 
     name: 'About', 
-    component: () => import('@/components/About.vue'),
+    component: () => import('@/components/old/About.vue'),
     meta: { 
       title: 'About me | Oksana Vlasenko' 
     }  
@@ -20,7 +20,7 @@ const routes = [
   { 
     path: '/work-history', 
     name: 'Work History', 
-    component: () => import('@/components/Projects.vue'),
+    component: () => import('@/components/old/Projects.vue'),
     meta: {
       title: 'Work History | Oksana Vlasenko' 
     }  
@@ -28,7 +28,7 @@ const routes = [
   { 
     path: '/contact', 
     name: 'Contact', 
-    component: () => import('@/components/Contacts.vue'),
+    component: () => import('@/components/old/Contacts.vue'),
     meta: {
       title: 'Contact | Oksana Vlasenko' 
     }  
