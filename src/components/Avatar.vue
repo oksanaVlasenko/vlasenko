@@ -52,17 +52,24 @@
           <ul class="socials-square d-flex justify-content-between">
             <li class="socials-square__item">
               <a class="socials-square__link btn" href="https://t.me/kseniaVlasenko" target="_blank">
-                <svg
-                >
+                <svg>
                   <use xlink:href="#telegram"></use>
                 </svg>
               </a>
             </li>
             <li class="socials-square__item">
-              <a class="socials-square__link btn" href="https://github.com/oksanaVlasenko" target="_blank"><i class="ph-bold ph-github-logo"></i></a>
+              <a class="socials-square__link btn" href="https://github.com/oksanaVlasenko" target="_blank">
+                <svg>
+                  <use xlink:href="#github"></use>
+                </svg>
+              </a>
             </li>
             <li class="socials-square__item">
-              <a class="socials-square__link btn" href="https://www.linkedin.com/in/oksana-vlasenko-28b53919b/" target="_blank"><i class="ph-bold ph-linkedin-logo"></i></a>
+              <a class="socials-square__link btn" href="https://www.linkedin.com/in/oksana-vlasenko-28b53919b/" target="_blank">
+                <svg>
+                  <use xlink:href="#linkedin"></use>
+                </svg>
+              </a>
             </li>
           </ul>
         </div>

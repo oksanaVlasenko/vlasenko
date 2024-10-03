@@ -7,12 +7,28 @@
     <Header />
 
     <Avatar />
+
+    <div id="content" class="content">
+      <div class="content__wrapper">
+        <Home />
+
+        <About />
+
+        <Resume />
+
+        <Contacts />
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
 import Header from '@/components/Header.vue'
 import Avatar from '@/components/Avatar.vue'
+import Home from '@/components/Home.vue'
+import About from '@/components/About.vue'
+import Resume from '@/components/Resume.vue'
+import Contacts from '@/components/Contacts.vue'
 
 import { ref, onMounted } from 'vue';
 
