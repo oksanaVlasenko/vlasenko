@@ -13,7 +13,7 @@
 
       <nav class="hidden lg:flex lg:justify-center">
         <ul>
-          <li 
+          <!-- <li 
             v-for="link in links"
             :key="link.text"
             class="link"
@@ -32,7 +32,7 @@
               
               {{ link.text }}
             </router-link>
-          </li>
+          </li> -->
         </ul>
       </nav>
 

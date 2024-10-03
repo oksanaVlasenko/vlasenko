@@ -10,13 +10,12 @@
 
     <div id="content" class="content">
       <div class="content__wrapper">
-        <Home />
-
-        <About />
-
-        <Resume />
-
-        <Contacts />
+        <div
+          v-for="section in sections"
+          :key="section.id"
+        >
+          <component :is="section.component" />
+        </div>
       </div>
     </div>
   </div>
@@ -30,7 +29,30 @@ import About from '@/components/About.vue'
 import Resume from '@/components/Resume.vue'
 import Contacts from '@/components/Contacts.vue'
 
-import { ref, onMounted } from 'vue';
+import { ref, onMounted, onBeforeUnmount } from 'vue';
+import { useRouter } from 'vue-router';
+
+const sections = [
+  { id: 'home-page', component: Home },
+  { id: 'about', component: About },
+  { id: 'resume', component: Resume },
+  { id: 'contacts', component: Contacts },
+];
+
+const router = useRouter();
+const observer = ref(null);
+const lastActiveSection = ref('');
+
+const updateActiveSection = (entries) => {
+  entries.forEach((entry) => {
+    if (entry.isIntersecting) {
+      if (lastActiveSection.value !== entry.target.id) {
+        lastActiveSection.value = entry.target.id; 
+        entry.target.id === 'home-page' ? router.replace('/') : router.replace(`${entry.target.id}`); 
+      }
+    }
+  });
+};
 
 const blurContainer = ref(null);
 
@@ -118,6 +140,28 @@ onMounted(() => {
     moveY(blur);
     rotate(blur);
   });
+
+  observer.value = new IntersectionObserver(updateActiveSection, {
+    threshold: 0.2, // Adjust the threshold as needed
+  });
+
+  sections.forEach((section) => {
+    const element = document.getElementById(section.id);
+    if (element) {
+      observer.value.observe(element);
+    } 
+  });
+});
+
+onBeforeUnmount(() => {
+  if (observer.value) {
+    sections.forEach((section) => {
+      const element = document.getElementById(section.id);
+      if (element) {
+        observer.value.unobserve(element);
+      }
+    });
+  }
 });
 </script>
 

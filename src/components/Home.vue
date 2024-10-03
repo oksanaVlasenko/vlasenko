@@ -1,5 +1,5 @@
 <template>
-  <section id="home" class="main intro">
+  <section id="home-page" class="main intro">
     <!-- Headline Start -->
     <div id="headline" class="headline d-flex align-items-start flex-column" data-speed="1">
       <p class="headline__subtitle animate-headline">

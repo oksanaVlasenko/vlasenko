@@ -1,47 +1,39 @@
-import { createWebHashHistory, createRouter } from 'vue-router'
+import { createRouter, createWebHashHistory } from 'vue-router';
+import Home from '@/components/Home.vue'
+import About from '@/components/About.vue'
+import Resume from '@/components/Resume.vue'
+import Contacts from '@/components/Contacts.vue'
 
 const routes = [
-  { 
-    path: '/', 
-    name: 'Home', 
-    component: () => import('@/components/old/Home.vue'),
-    meta: { 
-      title: 'Home | Oksana Vlasenko' 
-    }  
-  },
-  { 
-    path: '/about', 
-    name: 'About', 
-    component: () => import('@/components/old/About.vue'),
-    meta: { 
-      title: 'About me | Oksana Vlasenko' 
-    }  
-  },
-  { 
-    path: '/work-history', 
-    name: 'Work History', 
-    component: () => import('@/components/old/Projects.vue'),
-    meta: {
-      title: 'Work History | Oksana Vlasenko' 
-    }  
-  },
-  { 
-    path: '/contact', 
-    name: 'Contact', 
-    component: () => import('@/components/old/Contacts.vue'),
-    meta: {
-      title: 'Contact | Oksana Vlasenko' 
-    }  
-  },
-]
+  { path: '/', component: Home },
+  { path: '/about', component: About },
+  { path: '/resume', component: Resume },
+  { path: '/contacts', component: Contacts },
+];
 
 const router = createRouter({
   history: createWebHashHistory(),
   routes,
-})
+  scrollBehavior(to) {
+    const sectionIdMap = {
+      '/': 'home-page', 
+      '/about': 'about',
+      '/resume': 'resume',
+      '/contacts': 'contacts',
+    };
+    
+    const sectionId = sectionIdMap[to.path];
+    const element = document.getElementById(sectionId);
 
-router.beforeEach((to) => {
-  document.title = to.meta.title || 'Oksana Vlasenko'
-})
+    if (element) {
+      return {
+        el: element,
+        behavior: 'smooth',
+      };
+    }
 
-export default router
+    return { top: 0 };
+  },
+});
+
+export default router;

@@ -74,7 +74,7 @@
           </ul>
         </div>
         <div class="avatar__btnholder">
-          <a class="btn btn-default btn-fullwidth btn-hover btn-hover-accent" href="#contact" target="_blank">
+          <a class="btn btn-default btn-fullwidth btn-hover btn-hover-accent" href="#contacts">
             <span class="btn-caption">Let's Work Together!</span>
           </a>
         </div>

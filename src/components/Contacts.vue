@@ -1,5 +1,5 @@
 <template>
-  <section id="contact" class="inner contact">
+  <section id="contacts" class="inner contact">
     <div class="content__block section-title">
       <p class="h2__subtitle  animate-in-up">
         <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="13px" height="13px" viewBox="0 0 13 13" fill="currentColor">

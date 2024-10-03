@@ -1,5 +1,5 @@
 <template>
-  <section id="home" class="split-hero-section">
+  <section class="split-hero-section">
     <div class="w-layout-grid grid-hero-split">
       <div class="hero-split-title">
         <div>
@@ -50,7 +50,7 @@
       </div>
     </div>
   </section>
-  <section v-if="false" id="home" class="home-page">
+  <section v-if="false" class="home-page">
     <div class="home-layout">
       <div class="home-title">
         <div>

@@ -1,7 +1,7 @@
 <template>
   <div class="flex justify-center flex-col sm:flex-row list">
     <div v-if="!isSmallScreen">
-      <router-link 
+      <!-- <router-link 
         v-for="link in links"
         :key="link.text"
         :to="link.to"
@@ -16,7 +16,7 @@
         exact-active-class="active"
       >
         {{ link.text }}
-      </router-link>
+      </router-link> -->
     </div>
     
     <div 
