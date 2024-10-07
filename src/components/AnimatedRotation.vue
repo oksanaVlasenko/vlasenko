@@ -1,7 +1,8 @@
 <template>
-  <div ref="rotatingElement" class="rotating-btn">
+  <div ref="rotatingElement" class="rotating-btn" :class="`rotate-${id}`">
     <a :href="`#${link}`" class="rotating-btn__link slide-down">
       <svg
+        ref="svgElement"
         version="1.1"
         xmlns="http://www.w3.org/2000/svg"
         xmlns:xlink="http://www.w3.org/1999/xlink"
@@ -46,40 +47,57 @@ const props = defineProps({
   link: {
     type: String,
     default: () => 'about'
+  },
+  id: {
+    type: Number,
+    default: () => 1
   }
 });
 
 const rotation = ref(0);
 const rotatingElement = ref(null);
+const svgElement = ref(null);
 
-let element;
+const isElementInView = (element) => {
+  const scrollY = window.scrollY;
+  const windowHeight = window.innerHeight;
+  const elementOffsetTop = element.offsetTop;
+  const elementHeight = element.offsetHeight;
+
+  return (
+    (scrollY + windowHeight >= elementOffsetTop) || // Element's top is in view
+    (scrollY <= elementOffsetTop + elementHeight)   // Element's bottom is in view
+  );
+}
 
 const updateRotation = () => {
-  if (!element) return; 
-
-  console.log(rotatingElement.value, ' value rotatingElement')
+  if (!rotatingElement.value || !svgElement.value) return;
 
   const scrollY = window.scrollY;
   const value = parseInt(360, 10); 
-  const elementOffsetTop = element.offsetTop;
+  const elementOffsetTop =  rotatingElement.value.offsetTop;
   const windowHeight = window.innerHeight;
   
-  if (scrollY + windowHeight > elementOffsetTop && scrollY < elementOffsetTop + element.offsetHeight) {
+  let isShown = isElementInView(rotatingElement.value)
+
+  console.log(isShown, ' isshoen0', rotatingElement.value)
+  if (isShown) {
     const scrollPosition = scrollY + windowHeight - elementOffsetTop; 
-    const elementHeight = element.offsetHeight;
+    const elementHeight = rotatingElement.value.offsetHeight;
 
     const rotationFactor = scrollPosition / (elementHeight + windowHeight); 
     const rotationValue = rotationFactor * value; 
 
     rotation.value = rotationValue > value ? value : rotationValue; 
+    console.log(rotation.value, ' rotation.value ')
+    svgElement.value.style.transform = `rotate(${rotation.value}deg)`;
   } else {
     rotation.value = 0; 
+    svgElement.value.style.transform = `rotate(${rotation.value}deg)`;
   }
 };
 
-onMounted(() => {
-  element = document.querySelector('.rotating-btn'); 
-  
+onMounted(() => {  
   window.addEventListener('scroll', updateRotation);
 });
 

@@ -108,6 +108,7 @@
           :link="'home'"
           :svgPath="'arrowUp'"
           :text="'Let Scroll to Top * Let Scroll to Top * '"
+          :id="2"
         />
         
       </div>
