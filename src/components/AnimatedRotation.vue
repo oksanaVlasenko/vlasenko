@@ -65,8 +65,8 @@ const isElementInView = (element) => {
   const elementHeight = element.offsetHeight;
 
   return (
-    (scrollY + windowHeight >= elementOffsetTop) || // Element's top is in view
-    (scrollY <= elementOffsetTop + elementHeight)   // Element's bottom is in view
+    (scrollY + windowHeight >= elementOffsetTop) || 
+    (scrollY <= elementOffsetTop + elementHeight)  
   );
 }
 
@@ -74,22 +74,21 @@ const updateRotation = () => {
   if (!rotatingElement.value || !svgElement.value) return;
 
   const scrollY = window.scrollY;
-  const value = parseInt(360, 10); 
-  const elementOffsetTop =  rotatingElement.value.offsetTop;
-  const windowHeight = window.innerHeight;
+  const value = 360
+  const windowHeight = window.innerHeight; 
+  const elementOffsetTop = rotatingElement.value.offsetTop; 
   
   let isShown = isElementInView(rotatingElement.value)
 
-  console.log(isShown, ' isshoen0', rotatingElement.value)
   if (isShown) {
     const scrollPosition = scrollY + windowHeight - elementOffsetTop; 
     const elementHeight = rotatingElement.value.offsetHeight;
 
-    const rotationFactor = scrollPosition / (elementHeight + windowHeight); 
+    const rotationFactor = scrollPosition / (elementHeight - windowHeight)
     const rotationValue = rotationFactor * value; 
 
     rotation.value = rotationValue > value ? value : rotationValue; 
-    console.log(rotation.value, ' rotation.value ')
+    
     svgElement.value.style.transform = `rotate(${rotation.value}deg)`;
   } else {
     rotation.value = 0; 
