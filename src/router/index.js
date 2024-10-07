@@ -1,4 +1,4 @@
-import { createRouter, createWebHashHistory } from 'vue-router';
+import { createRouter, createWebHistory } from 'vue-router';
 import Home from '@/components/Home.vue'
 import About from '@/components/About.vue'
 import Resume from '@/components/Resume.vue'
@@ -12,9 +12,10 @@ const routes = [
 ];
 
 const router = createRouter({
-  history: createWebHashHistory(),
+  history: createWebHistory(),
   routes,
   scrollBehavior(to) {
+    console.log(to, ' to')
     const sectionIdMap = {
       '/': 'home-page', 
       '/about': 'about',
@@ -25,6 +26,7 @@ const router = createRouter({
     const sectionId = sectionIdMap[to.path];
     const element = document.getElementById(sectionId);
 
+    console.log(sectionId, ' id', element)
     if (element) {
       return {
         el: element,
@@ -32,7 +34,7 @@ const router = createRouter({
       };
     }
 
-    return { top: 0 };
+    //return { top: 0 };
   },
 });
 

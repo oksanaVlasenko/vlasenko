@@ -104,29 +104,12 @@
         </p>
 
         <!-- Scroll Button Start -->
-        <div class="rotating-btn">
-          <a href="#home" class="rotating-btn__link slide-down">
-            <!-- SVG rotating text -->
-            <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-              viewBox="0 0 120 120" style="enable-background:new 0 0 120 120;" xml:space="preserve" 
-              class="animate-rotation" data-value="360">
-              <defs>
-                <path id="textPath" d="M110,59.5c0,27.6-22.4,50-50,50s-50-22.4-50-50s22.4-50,50-50S110,31.9,110,59.5z"/>
-              </defs>
-              <g>
-                <use xlink:href="#textPath" fill="none"></use>
-                <text>
-                  <!-- button text here!!! -->
-                  <textPath xlink:href="#textPath">Let Scroll to Top  *Let Scroll to Top  * </textPath>
-                </text>
-              </g>
-            </svg>
-            <!-- arrow icon -->
-            <svg class="rotating-btn__arrow">
-              <use xlink:href="#arrowUp"></use>
-            </svg>
-          </a>
-        </div>
+        <AnimatedRotation 
+          :link="'home'"
+          :svgPath="'arrowUp'"
+          :text="'Let Scroll to Top * Let Scroll to Top * '"
+        />
+        
       </div>
     </div>
 
@@ -166,6 +149,10 @@
 <script setup>
 import emailjs from '@emailjs/browser'
 import { ref } from 'vue'
+import { useScrollAppearAnimation } from '@/composables/useScrollAppearAnimation.js';
+import AnimatedRotation from '@/components/AnimatedRotation.vue'
+
+useScrollAppearAnimation(50, 0.3)
 
 const form = ref(null)
 

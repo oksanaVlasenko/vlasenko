@@ -10,7 +10,7 @@
         </svg>
         <span>Let's meet!</span>
       </p>
-      <h1 class="headline__title animate-headline">I'm Oksana Vlasenko<br>Senior Frontend Developer.</h1>
+      <h1 ref="headline" class="headline__title animate-headline fade-in">I'm Oksana Vlasenko<br>Senior Frontend Developer.</h1>
       
       <div class="headline__btnholder d-flex flex-column flex-sm-row">
         <a class="btn mobile-vertical btn-default btn-hover btn-hover-accent-mobile animate-headline" href="#resume">
@@ -30,40 +30,25 @@
     <!-- Headline End -->
 
     <!-- Scroll Button Start -->
-    <div class="rotating-btn">
-      <a href="#about" class="rotating-btn__link slide-down">
-        <!-- SVG rotating text -->
-        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
-          viewBox="0 0 120 120" style="enable-background:new 0 0 120 120;" xml:space="preserve" 
-          class="animate-rotation text-svg" data-value="360">
-          <defs>
-            <path id="textPath" d="M110,59.5c0,27.6-22.4,50-50,50s-50-22.4-50-50s22.4-50,50-50S110,31.9,110,59.5z"/>
-          </defs>
-          <g>
-            <use xlink:href="#textPath" fill="none"></use>
-            <text>
-              <!-- button text here!!! -->
-              <textPath xlink:href="#textPath">Scroll for More * Scroll for More * </textPath>
-            </text>
-          </g>
-        </svg>
-        <!-- arrow icon -->
-        <svg class="rotating-btn__arrow">
-          <use xlink:href="#arrowDown"></use>
-        </svg>
-      </a>
-    </div>
+    <AnimatedRotation />
     <!-- Scroll Button End -->
 
     </section>
 </template>
 
 <script setup>
+import AnimatedRotation from '@/components/AnimatedRotation.vue'
+
+import { useScrollAppearAnimation } from '@/composables/useScrollAppearAnimation.js';
+
+useScrollAppearAnimation(50, 0.3)
+
 const downloadAndOpen = () => {
   const fileUrl = new URL('@/assets/CV_Oksana_Vlasenko.pdf', import.meta.url).href;
   
   window.open(fileUrl, '_blank');
 }
+
 </script>
 
 <style>

@@ -90,6 +90,10 @@
 </template>
 
 <script setup>
+import { useScrollAppearAnimation } from '@/composables/useScrollAppearAnimation.js';
+
+useScrollAppearAnimation(50, 0.3)
+
 const downloadAndOpen = () => {
   const fileUrl = new URL('@/assets/CV_Oksana_Vlasenko.pdf', import.meta.url).href;
   

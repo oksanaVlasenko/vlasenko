@@ -239,7 +239,7 @@
 
 @media only screen and (min-width: 1200px) {
   .socials-square__link svg {
-    color: rgba(0, 0, 0, 0);
+    /* color: rgba(0, 0, 0, 0); */
     text-shadow: 0 0 var(--t-bright), 0 4.4rem var(--t-bright);
   }
    .socials-square__link:hover::before {

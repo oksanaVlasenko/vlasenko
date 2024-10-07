@@ -142,7 +142,7 @@ onMounted(() => {
   });
 
   observer.value = new IntersectionObserver(updateActiveSection, {
-    threshold: 0.2, // Adjust the threshold as needed
+    threshold: 0.3, // Adjust the threshold as needed
   });
 
   sections.forEach((section) => {

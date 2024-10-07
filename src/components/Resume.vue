@@ -222,10 +222,10 @@
   </section>
 </template>
 
-<script>
-export default {
-  
-}
+<script setup>
+import { useScrollAppearAnimation } from '@/composables/useScrollAppearAnimation.js';
+
+useScrollAppearAnimation(50, 0.3)
 </script>
 
 <style>
