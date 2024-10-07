@@ -14,7 +14,7 @@ const routes = [
 const router = createRouter({
   history: createWebHistory(),
   routes,
-  scrollBehavior(to) {
+  scrollBehavior(to, from) {
     console.log(to, ' to')
     const sectionIdMap = {
       '/': 'home-page', 
@@ -24,14 +24,22 @@ const router = createRouter({
     };
     
     const sectionId = sectionIdMap[to.path];
+
     const element = document.getElementById(sectionId);
 
-    console.log(sectionId, ' id', element)
+    const currentScrollY = window.scrollY;
+
     if (element) {
-      return {
-        el: element,
-        behavior: 'smooth',
-      };
+      const currentScrollY = window.scrollY;
+      const elementOffsetTop = element.offsetTop;
+
+      // Only scroll to the element if the current position is not near it
+      if (Math.abs(currentScrollY - elementOffsetTop) > 50) { // Adjust the threshold as necessary
+        return {
+          el: element,
+          behavior: 'smooth',
+        };
+      }
     }
 
     //return { top: 0 };

@@ -107,7 +107,7 @@
         <AnimatedRotation 
           :link="'home'"
           :svgPath="'arrowUp'"
-          :text="'Scroll for Top *Scroll for Top * Top*'"
+          :text="'Scroll for Top *Top* Scroll for Top *'"
           :id="2"
         />
         

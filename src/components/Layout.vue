@@ -39,20 +39,52 @@ const sections = [
   { id: 'contacts', component: Contacts },
 ];
 
+const debounce = (func, delay) => {
+  let timeout;
+  return (...args) => {
+    clearTimeout(timeout);
+    timeout = setTimeout(() => {
+      func.apply(this, args);
+    }, delay);
+  };
+};
+
 const router = useRouter();
 const observer = ref(null);
 const lastActiveSection = ref('');
 
-const updateActiveSection = (entries) => {
+const updateActiveSection = debounce((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       if (lastActiveSection.value !== entry.target.id) {
-        lastActiveSection.value = entry.target.id; 
-        entry.target.id === 'home-page' ? router.replace('/') : router.replace(`${entry.target.id}`); 
+        lastActiveSection.value = entry.target.id; // Update last active section
+        // Use router replace to change the URL
+        entry.target.id === 'home-page' ? router.replace('/') : router.replace(`/${entry.target.id}`);
       }
     }
   });
-};
+}, 200);
+
+// const updateActiveSection = (entries) => {
+//   entries.forEach((entry) => {
+//     if (entry.isIntersecting) {
+//       if (lastActiveSection.value !== entry.target.id) {
+//         console.log(entry, ' entry.target.id')
+//         const currentScrollY = window.scrollY;
+//         console.log(currentScrollY, ' const currentScrollY = window.scrollY;')
+//         console.log(entry.target.offsetHeight, ' offsetHeight')
+//         console.log(entry.target.offsetTop, ' offsetTop')
+//       //   const elStart = element.offsetTop
+//       // const elHeight = element.offsetHeight
+//       // const elBottom = elStart + elHeight 
+
+//       // console.log(elBottom, ' bottom')
+//         // lastActiveSection.value = entry.target.id; 
+//         entry.target.id === 'home-page' ? router.replace('/') : router.replace(`${entry.target.id}`); 
+//       }
+//     }
+//   });
+// };
 
 const blurContainer = ref(null);
 
@@ -142,7 +174,7 @@ onMounted(() => {
   });
 
   observer.value = new IntersectionObserver(updateActiveSection, {
-    threshold: 0.3, // Adjust the threshold as needed
+    threshold: .3, // Adjust the threshold as needed
   });
 
   sections.forEach((section) => {
