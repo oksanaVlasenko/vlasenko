@@ -2116,6 +2116,34 @@ p.additional-text a {
   }
 }
 
+@keyframes slideUpText {
+  0% {
+    transform: translateY(50px); /* Start slightly below */
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.animate-headline,
+.animate-card-3,
+.animate-card-5,
+.animate-in-up {
+  opacity: 0; /* Start hidden */
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.animate-headline.visible,
+.animate-card-3.visible,
+.animate-card-5.visible,
+.animate-in-up.visible {
+  /* animation: slideDown 0.5s forwards; Add the animation */
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  opacity: 1;
+  transform: translateY(0);
+}
 
 .btn-contact-icon {
   fill: var(--t-bright) !important;

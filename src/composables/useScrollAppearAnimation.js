@@ -1,6 +1,6 @@
 import { onMounted, ref } from 'vue';
 
-export function useScrollAppearAnimation(yStart = 50, duration = 0.5, delay = 0.2) {
+export function useScrollAppearAnimation(yStart = 50, duration = 0.3, delay = 0.1) {
   const isVisible = ref(false);
 
   const animateElement = (element, index) => {
@@ -25,14 +25,15 @@ export function useScrollAppearAnimation(yStart = 50, duration = 0.5, delay = 0.
     observer.observe(element);
   };
 
-  onMounted(() => {
+  onMounted(() => {    
+    // animate-card-3 animate-card-5
     const elements = [
       ...document.querySelectorAll('.animate-headline'),
       ...document.querySelectorAll('.animate-card-3'),
-      //...document.querySelectorAll('.animate-in-up'),
+      ...document.querySelectorAll('.animate-in-up'),
       ...document.querySelectorAll('.animate-card-5'),
-    ]; // For multiple elements 
-    
+    ];
+
     elements.forEach((element, index) => {
       animateElement(element, index); // Pass index to create delay
     });
