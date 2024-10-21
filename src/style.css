@@ -2131,7 +2131,8 @@ p.additional-text a {
 .animate-card-3,
 .animate-card-5,
 .animate-in-up {
-  opacity: 0; /* Start hidden */
+  opacity: 1;
+  /* opacity: 0; Start hidden */
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 

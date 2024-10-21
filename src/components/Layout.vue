@@ -32,6 +32,8 @@ import Contacts from '@/components/Contacts.vue'
 import { ref, onMounted, onBeforeUnmount } from 'vue';
 import { useRouter } from 'vue-router';
 
+import { isScrolling } from '@/state/useScrollState';
+
 const sections = [
   { id: 'home-page', component: Home },
   { id: 'about', component: About },
@@ -57,9 +59,14 @@ const updateActiveSection = debounce((entries) => {
   entries.forEach((entry) => {
     if (entry.isIntersecting) {
       if (lastActiveSection.value !== entry.target.id) {
-        lastActiveSection.value = entry.target.id; // Update last active section
-        // Use router replace to change the URL
-        entry.target.id === 'home-page' ? router.replace('/') : router.replace(`/${entry.target.id}`);
+        lastActiveSection.value = entry.target.id;
+
+        // Smoothly update URL without scrolling the page
+        const newPath = entry.target.id === 'home-page' ? '/' : `/${entry.target.id}`;
+        if (router.currentRoute.value.path !== newPath) {
+          isScrolling.value = true; 
+          router.replace(newPath); // Replace to prevent adding to history
+        }
       }
     }
   });

@@ -182,6 +182,12 @@
   }
 }
 
+.slide-down:hover .rotating-btn__arrow {
+  -webkit-animation: 0.4s ease-in-out 0s 1 both slideDown;
+     -moz-animation: 0.4s ease-in-out 0s 1 both slideDown;
+          animation: 0.4s ease-in-out 0s 1 both slideDown;
+}
+
 .fade-in {
   opacity: 0;
   transform: translateY(50px);

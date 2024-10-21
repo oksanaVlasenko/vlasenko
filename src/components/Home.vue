@@ -10,7 +10,7 @@
         </svg>
         <span>Let's meet!</span>
       </p>
-      <h1 ref="headline" class="headline__title animate-headline fade-in">I'm Oksana Vlasenko<br>Senior Frontend Developer.</h1>
+      <h1 ref="headline" class="headline__title animate-headline">I'm Oksana Vlasenko<br>Senior Frontend Developer.</h1>
       
       <div class="headline__btnholder d-flex flex-column flex-sm-row">
         <a class="btn mobile-vertical btn-default btn-hover btn-hover-accent-mobile animate-headline" href="#resume">
@@ -20,10 +20,11 @@
           </svg>
         </a>
         <a class="btn mobile-vertical btn-default btn-hover btn-hover-outline-mobile animate-headline" @click="downloadAndOpen">
-          <span class="btn-caption">Download CV</span>
-          <svg>
-            <use xlink:href="#download"></use>
-          </svg>
+          <span class="btn-caption">Download CV
+            <svg>
+              <use xlink:href="#download"></use>
+            </svg>
+          </span>
         </a>
       </div>
     </div>
@@ -39,15 +40,39 @@
 <script setup>
 import AnimatedRotation from '@/components/AnimatedRotation.vue'
 
-import { useScrollAppearAnimation } from '@/composables/useScrollAppearAnimation.js';
+import { onMounted } from 'vue';
 
-useScrollAppearAnimation(50, 0.3)
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger)
 
 const downloadAndOpen = () => {
   const fileUrl = new URL('@/assets/CV_Oksana_Vlasenko.pdf', import.meta.url).href;
   
   window.open(fileUrl, '_blank');
 }
+
+onMounted(() => {
+  gsap.set(".animate-headline", { y: 50, opacity: 0 });
+
+  ScrollTrigger.batch(".animate-headline", {
+    interval: 0.1, 
+    batchMax: 4, 
+    onEnter: batch => gsap.to(batch, {
+      opacity: 1, 
+      y: 0,
+      ease: 'sine',
+      stagger: { each: 0.15, grid: [1, 4] }, 
+      overwrite: true
+    }),
+    onLeave: batch => gsap.set(batch, { opacity: 1, y: 0, overwrite: true }),
+    onEnterBack: batch => gsap.to(batch, { opacity: 1, y: 0, stagger: 0.15, overwrite: true }),
+    onLeaveBack: batch => gsap.set(batch, { opacity: 0, y: 50, overwrite: true })
+  });
+
+  ScrollTrigger.refresh();
+});
 
 </script>
 

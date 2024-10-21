@@ -13,7 +13,7 @@
         xml:space="preserve"
         class="animate-rotation text-svg"
         data-value="360"
-        :style="{ transform: `rotate(${rotation}deg)` }"
+        
       >
         <defs>
           <path id="textPath" d="M110,59.5c0,27.6-22.4,50-50,50s-50-22.4-50-50s22.4-50,50-50S110,31.9,110,59.5z"/>
@@ -33,7 +33,11 @@
 </template>
 
 <script setup>
-import { defineProps, ref, onMounted, onUnmounted } from 'vue';
+import { defineProps, ref, onMounted } from 'vue';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger'
+
+gsap.registerPlugin(ScrollTrigger);
 
 const props = defineProps({
   svgPath: {
@@ -54,53 +58,22 @@ const props = defineProps({
   }
 });
 
-const rotation = ref(0);
 const rotatingElement = ref(null);
 const svgElement = ref(null);
 
-const isElementInView = (element) => {
-  const scrollY = window.scrollY;
-  const windowHeight = window.innerHeight;
-  const elementOffsetTop = element.offsetTop;
-  const elementHeight = element.offsetHeight;
-
-  return (
-    (scrollY + windowHeight >= elementOffsetTop) || 
-    (scrollY <= elementOffsetTop + elementHeight)  
-  );
-}
-
-const updateRotation = () => {
-  if (!rotatingElement.value || !svgElement.value) return;
-
-  const scrollY = window.scrollY;
-  const value = 360
-  const windowHeight = window.innerHeight; 
-  const elementOffsetTop = rotatingElement.value.offsetTop; 
-  
-  let isShown = isElementInView(rotatingElement.value)
-
-  if (isShown) {
-    const scrollPosition = scrollY + windowHeight - elementOffsetTop; 
-    const elementHeight = rotatingElement.value.offsetHeight;
-
-    const rotationFactor = scrollPosition / (elementHeight - windowHeight)
-    const rotationValue = rotationFactor * value; 
-
-    rotation.value = rotationValue > value ? value : rotationValue; 
-    
-    svgElement.value.style.transform = `rotate(${rotation.value}deg)`;
-  } else {
-    rotation.value = 0; 
-    svgElement.value.style.transform = `rotate(${rotation.value}deg)`;
-  }
-};
-
 onMounted(() => {  
-  window.addEventListener('scroll', updateRotation);
-});
+  const value = svgElement.value.getAttribute('data-value');
 
-onUnmounted(() => {
-  window.removeEventListener('scroll', updateRotation);
+  gsap.fromTo(svgElement.value, 
+    { rotate: 0 },
+    { 
+      rotate: value, 
+      ease: 'sine',
+      scrollTrigger: {
+        trigger: svgElement.value,
+        scrub: true,
+        toggleActions: 'play none none reverse',
+      }
+    });
 });
 </script>
