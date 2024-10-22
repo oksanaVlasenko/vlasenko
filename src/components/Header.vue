@@ -69,13 +69,15 @@
       <ThemeButton />
 
       <a id="notify-trigger" class="header__trigger btn" href="https://t.me/kseniaVlasenko" target="_blank">
-        <span class="trigger__caption">Let's Talk</span>
-
-        <svg
-          class="header__trigger-icon"
-        >
-          <use xlink:href="#message"></use>
-        </svg>
+        <span class="trigger__caption">
+          <small>Let's Talk</small>
+        
+          <svg
+            class="header__caption-icon"
+          >
+            <use xlink:href="#message"></use>
+          </svg>
+        </span>
       </a>
     </div>
   </header>

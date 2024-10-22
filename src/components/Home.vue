@@ -12,16 +12,21 @@
       </p>
       <h1 ref="headline" class="headline__title animate-headline">I'm Oksana Vlasenko<br>Senior Frontend Developer.</h1>
       
-      <div class="headline__btnholder d-flex flex-column flex-sm-row">
+      <div class="headline__btnholder d-flex">
         <a class="btn mobile-vertical btn-default btn-hover btn-hover-accent-mobile animate-headline" href="#resume">
-          <span class="btn-caption">My Works</span>
-          <svg>
-            <use xlink:href="#dots"></use>
-          </svg>
+          <span class="btn-caption">
+            My Works
+          
+            <svg class="caption-svg">
+              <use xlink:href="#dots"></use>
+            </svg>
+          </span>
         </a>
         <a class="btn mobile-vertical btn-default btn-hover btn-hover-outline-mobile animate-headline" @click="downloadAndOpen">
-          <span class="btn-caption">Download CV
-            <svg>
+          <span class="btn-caption">
+            Download CV
+
+            <svg class="caption-svg">
               <use xlink:href="#download"></use>
             </svg>
           </span>

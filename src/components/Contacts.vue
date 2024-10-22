@@ -51,10 +51,13 @@
               </div>
               <div class="col-12 form__item animate-in-up">
                 <button class="btn btn-default btn-hover btn-hover-accent" type="submit">
-                  <span class="btn-caption">Send Message</span>
-                  <svg class="btn-contact-icon">
-                    <use xlink:href="#send"></use>
-                  </svg>
+                  <span class="btn-caption">
+                    Send Message
+
+                    <svg class="btn-contact-icon">
+                      <use xlink:href="#send"></use>
+                    </svg>
+                  </span>
                 </button>
               </div>
             </div>
@@ -105,7 +108,7 @@
 
         <!-- Scroll Button Start -->
         <AnimatedRotation 
-          :link="'home'"
+          :link="''"
           :svgPath="'arrowUp'"
           :text="'Scroll for Top *Top* Scroll for Top *'"
           :id="2"
@@ -150,10 +153,12 @@
 <script setup>
 import emailjs from '@emailjs/browser'
 import { ref } from 'vue'
-import { useScrollAppearAnimation } from '@/composables/useScrollAppearAnimation.js';
 import AnimatedRotation from '@/components/AnimatedRotation.vue'
+import { useAnimateInUp } from '@/composables/useAnimateInUp';
+import { useAnimateCard5 } from '@/composables/useAnimateCard5';
 
-useScrollAppearAnimation(50, 0.3)
+useAnimateInUp()
+useAnimateCard5()
 
 const form = ref(null)
 

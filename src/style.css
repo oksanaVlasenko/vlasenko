@@ -464,6 +464,15 @@ img {
   }
 }
 
+.btn-caption svg {
+  margin-top: 16px;
+  margin-bottom: -4px;
+}
+
+/* .btn-caption span {
+  margin-bottom: 4px;
+} */
+
 .flex-column {
   flex-direction: column !important;
 }
@@ -1076,7 +1085,7 @@ p.additional-text a {
   transition: transform 0.3s var(--_animbezier), -webkit-transform 0.3s var(--_animbezier), -moz-transform 0.3s var(--_animbezier);
 }
 .btn-hover svg, .btn-hover span {
-  display: block;
+  display: inline-block;
   line-height: 5rem;
   /* color: rgba(0, 0, 0, 0); */
   overflow: hidden;
@@ -1085,7 +1094,7 @@ p.additional-text a {
   transition: 0.3s;
 }
 
-.btn-hover svg:hover, .btn-hover span:hover {
+.btn-hover span:hover {
   -webkit-animation: 0.4s ease-in-out 0s 1 both slideUp;
   -moz-animation: 0.4s ease-in-out 0s 1 both slideUp;
        animation: 0.4s ease-in-out 0s 1 both slideUp;
@@ -1138,17 +1147,17 @@ p.additional-text a {
 }
 
 @media only screen and (min-width: 1200px) {
-   .btn-hover-accent:hover svg,  .btn-hover-accent:hover span {
+   /* .btn-hover-accent:hover svg,  .btn-hover-accent:hover span {
     text-shadow: 0 -5rem var(--t-opp-bright), 0 0 var(--t-opp-bright);
-  }
+  } */
 }
 @media only screen and (min-width: 1600px) {
-  .btn-hover-accent svg, .btn-hover-accent span {
+  /* .btn-hover-accent svg, .btn-hover-accent span {
     text-shadow: 0 0 var(--t-opp-bright), 0 6rem var(--t-opp-bright);
   }
    .btn-hover-accent:hover svg, .btn-hover-accent:hover span {
     text-shadow: 0 -6rem var(--t-opp-bright), 0 0 var(--t-opp-bright);
-  }
+  } */
 }
 
 .btn-accent {
@@ -1176,21 +1185,20 @@ p.additional-text a {
   }
 }
 @media only screen and (min-width: 1200px) {
-  .btn-hover-accent-mobile svg, .btn-hover-accent-mobile span {
-    /* color: rgba(0, 0, 0, 0); */
+  /* .btn-hover-accent-mobile svg, .btn-hover-accent-mobile span {
     text-shadow: 0 0 var(--t-bright), 0 5rem var(--t-bright);
   }
    .btn-hover-accent-mobile:hover svg,  .btn-hover-accent-mobile:hover span {
     text-shadow: 0 -5rem var(--t-bright), 0 0 var(--t-bright);
-  }
+  } */
 }
 @media only screen and (min-width: 1600px) {
-  .btn-hover-accent-mobile svg, .btn-hover-accent-mobile span {
+  /* .btn-hover-accent-mobile svg, .btn-hover-accent-mobile span {
     text-shadow: 0 0 var(--t-bright), 0 6rem var(--t-bright);
   }
    .btn-hover-accent-mobile:hover svg,  .btn-hover-accent-mobile:hover span {
     text-shadow: 0 -6rem var(--t-bright), 0 0 var(--t-bright);
-  }
+  } */
 }
 
 .btn-accent-mobile {
@@ -1215,17 +1223,17 @@ p.additional-text a {
   text-shadow: 0 0 var(--t-bright), 0 5rem var(--t-bright);
 }
 @media only screen and (min-width: 1200px) {
-   .btn-hover-outline:hover i,  .btn-hover-outline:hover span {
+   /* .btn-hover-outline:hover i,  .btn-hover-outline:hover span {
     text-shadow: 0 -5rem var(--t-bright), 0 0 var(--t-bright);
-  }
+  } */
 }
 @media only screen and (min-width: 1600px) {
-  .btn-hover-outline i, .btn-hover-outline span {
+  /* .btn-hover-outline i, .btn-hover-outline span {
     text-shadow: 0 0 var(--t-bright), 0 6rem var(--t-bright);
   }
    .btn-hover-outline:hover i,  .btn-hover-outline:hover span {
     text-shadow: 0 -6rem var(--t-bright), 0 0 var(--t-bright);
-  }
+  } */
 }
 
 .btn-outline {
@@ -1270,9 +1278,9 @@ p.additional-text a {
   .btn-hover-outline-mobile svg, .btn-hover-outline-mobile span {
     text-shadow: 0 0 var(--t-disabled), 0 6rem var(--t-disabled);
   }
-  .btn-hover-outline-mobile:hover svg, .btn-hover-outline-mobile:hover span {
+  /* .btn-hover-outline-mobile:hover svg, .btn-hover-outline-mobile:hover span {
     text-shadow: 0 -6rem var(--t-bright), 0 0 var(--t-bright);
-  }
+  } */
 }
 
 .btn-outline-mobile {
@@ -1295,17 +1303,17 @@ p.additional-text a {
   text-shadow: 0 0 var(--t-disabled), 0 5rem var(--t-disabled);
 }
 @media only screen and (min-width: 1200px) {
-   .btn-hover-transparent:hover i,  .btn-hover-transparent:hover span {
+   /* .btn-hover-transparent:hover i,  .btn-hover-transparent:hover span {
     text-shadow: 0 -5rem var(--t-disabled), 0 0 var(--t-disabled);
-  }
+  } */
 }
 @media only screen and (min-width: 1600px) {
   .btn-hover-transparent i, .btn-hover-transparent span {
     text-shadow: 0 0 var(--t-disabled), 0 6rem var(--t-disabled);
   }
-   .btn-hover-transparent:hover i,  .btn-hover-transparent:hover span {
+   /* .btn-hover-transparent:hover i,  .btn-hover-transparent:hover span {
     text-shadow: 0 -6rem var(--t-bright), 0 0 var(--t-bright);
-  }
+  } */
 }
 
 .btn-transparent {
@@ -2149,4 +2157,5 @@ p.additional-text a {
 .btn-contact-icon {
   fill: var(--t-bright) !important;
   stroke: none;
+  margin-bottom: -4px;
 }

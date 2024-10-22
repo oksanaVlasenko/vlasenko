@@ -13,7 +13,7 @@
     </div>
 
     <div class="content__block grid-block">
-      <div class="achievements d-flex flex-column flex-md-row align-items-md-stretch">
+      <div class="achievements d-flex">
         <div class="achievements__item d-flex flex-column grid-item animate-card-3">
           <div class="achievements__card">
             <p class="achievements__number">4+</p>
@@ -46,13 +46,15 @@
 
             <div class="btn-group about-descr__btnholder animate-in-up">
               <a class="btn mobile-vertical btn-default btn-hover btn-hover-accent" @click="downloadAndOpen">
-                <span class="btn-caption">Download CV</span>
-                
-                <svg
-                  class="header__trigger-icon"
-                >
-                  <use xlink:href="#message"></use>
-                </svg>
+                <span class="btn-caption">
+                  Download CV
+
+                  <svg
+                    class="header__trigger-icon"
+                  >
+                    <use xlink:href="#message"></use>
+                  </svg>
+                </span>
               </a>
             </div>
           </div>
@@ -90,9 +92,12 @@
 </template>
 
 <script setup>
-import { useScrollAppearAnimation } from '@/composables/useScrollAppearAnimation.js';
+import { useAnimateInUp } from '@/composables/useAnimateInUp';
+import { useAnimateCard3 } from '@/composables/useAnimateCard3';
 
-useScrollAppearAnimation(50, 0.3)
+useAnimateCard3()
+useAnimateInUp()
+
 
 const downloadAndOpen = () => {
   const fileUrl = new URL('@/assets/CV_Oksana_Vlasenko.pdf', import.meta.url).href;

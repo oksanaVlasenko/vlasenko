@@ -223,9 +223,11 @@
 </template>
 
 <script setup>
-import { useScrollAppearAnimation } from '@/composables/useScrollAppearAnimation.js';
+import { useAnimateInUp } from '@/composables/useAnimateInUp';
+import { useAnimateCard5 } from '@/composables/useAnimateCard5';
 
-useScrollAppearAnimation(50, 0.3)
+useAnimateInUp()
+useAnimateCard5()
 </script>
 
 <style>

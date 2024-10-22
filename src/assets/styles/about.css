@@ -278,12 +278,21 @@
   }
 }
 
+.achievements {
+  flex-direction: column;
+  align-items: stretch;
+}
+
 .achievements__item {
   width: 100%;
 }
 @media only screen and (min-width: 768px) {
   .achievements__item {
     width: 33.33333334%;
+  }
+
+  .achievements {
+    flex-direction: row;
   }
 }
 

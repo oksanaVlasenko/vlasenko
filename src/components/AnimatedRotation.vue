@@ -1,6 +1,10 @@
 <template>
   <div ref="rotatingElement" class="rotating-btn" :class="`rotate-${id}`">
-    <a :href="`#${link}`" class="rotating-btn__link slide-down">
+    <router-link 
+      :to="`/${link}`" 
+      class="rotating-btn__link slide-down"
+    >
+    <!-- <a :href="`#${link}`" > -->
       <svg
         ref="svgElement"
         version="1.1"
@@ -28,7 +32,8 @@
       <svg class="rotating-btn__arrow">
         <use :xlink:href="`#${svgPath}`"></use>
       </svg>
-    </a>
+    <!-- </a> -->
+    </router-link>
   </div>
 </template>
 
