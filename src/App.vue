@@ -9,9 +9,9 @@ import Loader from '@/components/Loader.vue'
 import Layout from '@/components/Layout.vue'
 
 import { ref, onMounted, nextTick } from 'vue'
-//import { useRouter } from 'vue-router'
+import { useRouter } from 'vue-router'
 
-//const router = useRouter();
+const router = useRouter();
 
 const isLoaded = ref(false)
 
@@ -20,14 +20,12 @@ const startLoader = () => {
     isLoaded.value = true
 
     nextTick(() => {
-      //console.log(router.currentRoute.value.fullPath, ' router.currentRoute.value.fullPath')
-      //if (router.currentRoute.value.fullPath !== '/') router.replace(router.currentRoute.value.fullPath); 
+      if (router.currentRoute.value.fullPath !== '/') router.replace(router.currentRoute.value.fullPath); 
     })
   }, 1500)
 }
 
 onMounted(async () => {
-  //
   await nextTick()
 
   startLoader()

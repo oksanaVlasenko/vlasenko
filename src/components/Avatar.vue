@@ -29,7 +29,7 @@
           </div>
         </div>
         <div class="avatar__image">
-          <img src="@/assets/avatar.jpg" alt="Oksana Vlasenko Avatar">
+          <img src="@/assets/photo.jpg" alt="Oksana Vlasenko Avatar">
         </div>
       </div>
       <!-- data caption #1 -->

@@ -89,6 +89,7 @@
             <p class="small resume-lines__descr animate-in-up">
               Developed new features, maintained codebase, and performed code reviews. 
               Part of a team creating a micro front-end using Solid.js. 
+              Make intergations with Checkbox, Quickbooks, Sendpulse.
               Mentored junior developers <br>
               Technologies: Vue 2, Vuex, Vue Router, Solid.js, Tailwind, i18n, SCSS
             </p>
