@@ -10,7 +10,7 @@ const SVG_FOLDER_PATH = path.resolve(SRC_PATH, 'assets', 'icons')
 
 // https://vitejs.dev/config/
 export default defineConfig({
-  base: '/vlasenko/',
+  base: '/',
   
   plugins: [
     createSvgSpritePlugin({svgFolder: SVG_FOLDER_PATH}), 
