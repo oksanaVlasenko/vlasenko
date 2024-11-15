@@ -34,7 +34,7 @@
         <div class="d-flex container-info row g-0 justify-content-between">     
           <div class="col-12 col-xl-8 grid-item about-descr">
             <p class="about-descr__text animate-in-up">
-              I'm a software developer with over 4 years of web development experience, proficient in JavaScript and Vue 2, and with solid skills in Vue 3, Node.js, 
+              I'm a software developer with over 4 years of web development experience, proficient in JavaScript and Vue 2, and with solid skills in Vue 3, React.js, Node.js, 
               Express.js, Tailwind CSS, and TypeScript. 
               While I’ve dabbled in React, Vue has been my primary focus for the past 3+ years.  
             </p>

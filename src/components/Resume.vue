@@ -91,7 +91,7 @@
               Part of a team creating a micro front-end using Solid.js. 
               Make intergations with Checkbox, Quickbooks, Sendpulse.
               Mentored junior developers <br>
-              Technologies: Vue 2, Vuex, Vue Router, Solid.js, Tailwind, i18n, SCSS
+              Technologies: Vue 2, Vuex, Vue Router, Solid.js, Tailwind CSS, i18n, Vue 3 
             </p>
           </div>
         </div>
