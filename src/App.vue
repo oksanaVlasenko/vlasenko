@@ -17,7 +17,7 @@ const isLoaded = ref(false)
 
 const startLoader = () => {
   setTimeout(() => {
-    isLoaded.value = true
+    isLoaded.value = true 
 
     nextTick(() => {
       if (router.currentRoute.value.fullPath !== '/') router.replace(router.currentRoute.value.fullPath); 

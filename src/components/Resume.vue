@@ -122,7 +122,7 @@
           </div>
           <div class="resume-lines__item-block-m col-12 col-md-5">
             <h5 class="resume-lines__title animate-in-up">Frontend Developer</h5>
-            <p class="resume-lines__source animate-in-up">Freelance</p>
+            <p class="resume-lines__source animate-in-up">Self Employed</p>
           </div>
           <div class="resume-lines__item-block-m col-12 col-md-5">
             <p class="small resume-lines__descr animate-in-up">
