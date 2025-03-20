@@ -137,7 +137,7 @@
   display: none;
 }
 
-.header__trigger span:hover {
+.header__trigger:hover span {
   -webkit-animation: 0.4s ease-in-out 0s 1 both slideUp;
      -moz-animation: 0.4s ease-in-out 0s 1 both slideUp;
           animation: 0.4s ease-in-out 0s 1 both slideUp;

@@ -25,6 +25,7 @@
 import Header from '@/components/Header.vue'
 import Avatar from '@/components/Avatar.vue'
 import Home from '@/components/Home.vue'
+import Portfolio from '@/components/Portfolio.vue'
 import About from '@/components/About.vue'
 import Resume from '@/components/Resume.vue'
 import Contacts from '@/components/Contacts.vue'
@@ -36,6 +37,7 @@ import { isScrolling } from '@/state/useScrollState';
 
 const sections = [
   { id: 'home-page', component: Home },
+  { id: 'portfolio', component: Portfolio },
   { id: 'about', component: About },
   { id: 'resume', component: Resume },
   { id: 'contacts', component: Contacts },

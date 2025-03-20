@@ -13,7 +13,7 @@
       <h1 ref="headline" class="headline__title animate-headline">I'm Oksana Vlasenko<br>Senior Frontend Developer.</h1>
       
       <div class="headline__btnholder d-flex">
-        <a class="btn mobile-vertical btn-default btn-hover btn-hover-accent-mobile animate-headline" href="#resume">
+        <a class="btn mobile-vertical btn-default btn-hover btn-hover-accent-mobile animate-headline" href="#portfolio">
           <span class="btn-caption">
             My Works
           

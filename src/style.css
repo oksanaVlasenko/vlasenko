@@ -1094,7 +1094,7 @@ p.additional-text a {
   transition: 0.3s;
 }
 
-.btn-hover span:hover {
+.btn-hover:hover span {
   -webkit-animation: 0.4s ease-in-out 0s 1 both slideUp;
   -moz-animation: 0.4s ease-in-out 0s 1 both slideUp;
        animation: 0.4s ease-in-out 0s 1 both slideUp;
@@ -1344,7 +1344,7 @@ p.additional-text a {
   .btn-line {
     font-size: 2rem;
   }
-  .btn-line i {
+  .btn-line svg {
     font-size: 2.2rem;
   }
 }
@@ -1355,7 +1355,7 @@ p.additional-text a {
   -moz-border-radius: var(--_radius-m);
        border-radius: var(--_radius-m);
 }
-.btn-square i {
+.btn-square svg {
   display: -webkit-inline-box;
   display: -moz-inline-box;
   display: -ms-inline-flexbox;
@@ -1369,19 +1369,33 @@ p.additional-text a {
     width: 6rem;
     height: 6rem;
   }
-  .btn-square i {
+  .btn-square svg {
     font-size: 2.2rem;
   }
 }
 
-.btn-square-s i {
-  font-size: 1.4rem;
+.btn-square-s svg {
+  width: 1.4rem;
+  /* fill: var(--t-bright) !important;
+  color: var(--t-bright); */
 }
 
-.slide-right-up:hover i::before {
+.slide-right-up:hover svg use {
   -webkit-animation: 0.4s ease-in-out 0s 1 both slideRightUp;
      -moz-animation: 0.4s ease-in-out 0s 1 both slideRightUp;
           animation: 0.4s ease-in-out 0s 1 both slideRightUp;
+}
+
+.slide-right:hover svg use  {
+  -webkit-animation: 0.4s ease-in-out 0s 1 both slideRight;
+     -moz-animation: 0.4s ease-in-out 0s 1 both slideRight;
+          animation: 0.4s ease-in-out 0s 1 both slideRight;
+}
+
+.slide-left:hover svg use {
+  -webkit-animation: 0.4s ease-in-out 0s 1 both slideLeft;
+     -moz-animation: 0.4s ease-in-out 0s 1 both slideLeft;
+          animation: 0.4s ease-in-out 0s 1 both slideLeft;
 }
 
 

@@ -1,14 +1,8 @@
 <template>
   <section id="resume" class="inner resume">
     <div class="content__block block-large">
-      <p class="h2__subtitle animate-in-up">
-        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="13px" height="13px" viewBox="0 0 13 13" fill="currentColor">
-          <path fill="currentColor" d="M5.6,12.6c-0.5-0.8-0.7-2.4-1.7-3.5c-1-1-2.7-1.2-3.5-1.7C-0.1,7-0.1,6,0.4,5.6c0.8-0.5,2.3-0.6,3.5-1.8
-            C5,2.8,5.1,1.2,5.6,0.4C6-0.1,7-0.1,7.4,0.4c0.5,0.8,0.7,2.4,1.8,3.5c1.2,1.2,2.6,1.2,3.5,1.7c0.6,0.4,0.6,1.4,0,1.7
-            C11.8,7.9,10.2,8,9.1,9.1c-1,1-1.2,2.7-1.7,3.5C7,13.1,6,13.1,5.6,12.6z"/>
-        </svg>
-        <span>Resume</span>
-      </p>
+      <Subtitle title="Resume" />
+      
       <h2 class="h2__title animate-in-up">Education and practical experience</h2>
       <p class="h2__text animate-in-up">
         Be who you truly are—or, to put it more simply—never pretend to be something you're not, and don’t 
@@ -75,80 +69,251 @@
       <div class="container-fluid p-0 resume-lines">
         <!-- experience single item -->
         <div class="row g-0 resume-lines__item animate-in-up">
-          <div class="resume-lines__item-block-s col-12 col-md-2">
-            <span class="resume-lines__date animate-in-up">2021 – 2024</span>
-            <span class="resume-lines__date animate-in-up">2 years 11 months</span>
+          <div class="row resume-lines__item-block">
+            <div class="resume-lines__item-block-half">
+              <span class="resume-lines__date animate-in-up">2025/01 – present</span>
+              <span class="resume-lines__date animate-in-up">{{ lastWorkTime }}</span>
+            </div>
+            <div class="resume-lines__item-block-half">
+              <h5 class="resume-lines__title animate-in-up">Senior Frontend Developer</h5>
+              <p class="resume-lines__source animate-in-up">Self-Employed</p>
+            </div>
           </div>
-          <div class="resume-lines__item-block=m col-12 col-md-5">
-            <h5 class="resume-lines__title animate-in-up">Senior Frontend Developer</h5>
-            <p class="resume-lines__source animate-in-up">
-              in the FixQI Pro
-            </p>
+
+          <div class="col-12 resume-margin-top">
+            <p class="technologies">MurmLex – AI-Powered Vocabulary Learning Platform</p>
+
+            <ul class=" small animate-in-up resume-lines__descr">
+              <li>
+                <svg class="resume__icon">
+                  <use xlink:href="#rhombus"></use>
+                </svg>
+                Designed and developed an interactive vocabulary learning application that enhances word retention through AI-powered methods.
+              </li>
+              <li>
+                <svg class="resume__icon">
+                  <use xlink:href="#rhombus"></use>
+                </svg>
+                Implemented features such as flashcards, translation verification, and text generation to improve user engagement.              
+              </li>
+              <li>
+                <svg class="resume__icon">
+                  <use xlink:href="#rhombus"></use>
+                </svg>
+                Integrated Google Generative AI (Gemini-2.0-Flash) to generate translations, example sentences, and contextual learning materials.              
+              </li>
+              <li>
+                <svg class="resume__icon">
+                  <use xlink:href="#rhombus"></use>
+                </svg>
+                Utilized Nspell for spell-checking and validation of words and phrases before translation.             
+              </li>
+              <li>
+                <svg class="resume__icon">
+                  <use xlink:href="#rhombus"></use>
+                </svg>
+                Built an automated "Word of the Day" feature using Google Custom Search API to provide daily learning content.             
+              </li>
+              <li>
+                <svg class="resume__icon">
+                  <use xlink:href="#rhombus"></use>
+                </svg>
+                Developed a file storage system using AWS S3 for efficient data management.             
+              </li>
+              <li>
+                <svg class="resume__icon">
+                  <use xlink:href="#rhombus"></use>
+                </svg>
+                Enabled users to customize learning settings, adjust difficulty levels, and track progress for a personalized experience.         
+              </li>
+            </ul>
+            <br>
+            <span class="technologies">Technologies:</span> 
+            Next.js, Google Generative AI, Google Custom Search API, AWS S3, Nspell,
+            Prisma (PostgreSQL), NextAuth.js, Tailwind CSS, TypeScript,
           </div>
-          <div class="resume-lines__item-block-m col-12 col-md-5">
-            <p class="small resume-lines__descr animate-in-up">
-              Developed new features, maintained codebase, and performed code reviews. 
-              Part of a team creating a micro front-end using Solid.js. 
-              Make intergations with Checkbox, Quickbooks, Sendpulse.
-              Mentored junior developers <br>
-              Technologies: Vue 2, Vuex, Vue Router, Solid.js, Tailwind CSS, i18n, Vue 3 
-            </p>
+        </div>
+
+        <div class="row g-0 resume-lines__item animate-in-up">
+          <div class="row resume-lines__item-block">
+            <div class="resume-lines__item-block-half">
+              <span class="resume-lines__date animate-in-up">2021/09 – 2024/07</span>
+              <span class="resume-lines__date animate-in-up">2 years 11 months</span>
+            </div>
+            <div class="resume-lines__item-block-half">
+              <h5 class="resume-lines__title animate-in-up">Senior Frontend Developer</h5>
+              <p class="resume-lines__source animate-in-up">
+                in the FixQI Pro
+              </p>
+            </div>
+          </div>
+          
+          <div class="col-12 resume-margin-top">
+            <ul class=" small animate-in-up resume-lines__descr">
+              <li>
+                <svg class="resume__icon">
+                  <use xlink:href="#rhombus"></use>
+                </svg>
+                Contributed to the development of a robust micro frontend solution using Solid.js, ensuring efficient feature delivery and seamless integrations.
+
+              </li>
+              <li>
+                <svg class="resume__icon">
+                  <use xlink:href="#rhombus"></use>
+                </svg>
+                Led the effort to improve application performance through continuous refactoring, significantly enhancing overall system efficiency.
+              </li>
+              <li>
+                <svg class="resume__icon">
+                  <use xlink:href="#rhombus"></use>
+                </svg>
+                Mentored junior developers, fostering growth and knowledge sharing within the team, leading to stronger collaboration and skill development.
+              </li>
+              <li>
+                <svg class="resume__icon">
+                  <use xlink:href="#rhombus"></use>
+                </svg>
+                Successfully integrated various third-party services, including Checkbox, QuickBooks, and Sendpulse, to streamline business processes and improve user experience.
+              </li>
+              <li>
+                <svg class="resume__icon">
+                  <use xlink:href="#rhombus"></use>
+                </svg>
+                Played a key role in maintaining and scaling Vue.js applications (Vue 2 and Vue 3), enhancing code stability and overall user experience.
+              </li>
+              <li>
+                <svg class="resume__icon">
+                  <use xlink:href="#rhombus"></use>
+                </svg>
+
+                Utilized TypeScript, Tailwind CSS, and i18n to create scalable, maintainable, and user-friendly applications.
+              </li>
+            </ul>
+            <br>
+            <span class="technologies">Technologies:</span> 
+            Vue 2, Vue 3, Vuex, Vue Router, Solid.js, Tailwind CSS, i18n, TypeScript, Nuxt.js
           </div>
         </div>
         <!-- experience single item -->
         <div class="row g-0 resume-lines__item animate-in-up">
-          <div class="resume-lines__item-block-s col-12 col-md-2">
-            <span class="resume-lines__date animate-in-up">2021 - 2021</span>
-            <span class="resume-lines__date animate-in-up">4 months</span>
+          <div class="row resume-lines__item-block">
+            <div class="resume-lines__item-block-half">
+              <span class="resume-lines__date animate-in-up">2021/06 - 2021/09</span>
+              <span class="resume-lines__date animate-in-up">4 months</span>
+            </div>
+            <div class="resume-lines__item-block-half">
+              <h5 class="resume-lines__title animate-in-up">Frontend Developer</h5>
+              <p class="resume-lines__source animate-in-up">in the Medstar Solutions</p>
+            </div>
           </div>
-          <div class="resume-lines__item-block-m col-12 col-md-5">
-            <h5 class="resume-lines__title animate-in-up">Frontend Developer</h5>
-            <p class="resume-lines__source animate-in-up">in the Medstar Solutions</p>
-          </div>
-          <div class="resume-lines__item-block-m col-12 col-md-5">
-            <p class="small resume-lines__descr animate-in-up">
-              Worked on a Vue 2 application.
-              Created new components, maintained features, and wrote unit tests with Jest.
-              <br>
-              Technologies: Vue 2, Vuex, Vue Router, i18n, SCSS, Jest
-            </p>
+                    
+          <div class="col-12 resume-margin-top">
+            <ul class=" small animate-in-up resume-lines__descr">
+              <li>
+                <svg class="resume__icon">
+                  <use xlink:href="#rhombus"></use>
+                </svg>
+
+                Developed and maintained Vue 2 components, improving overall app functionality.
+              </li>
+              <li>
+                <svg class="resume__icon">
+                  <use xlink:href="#rhombus"></use>
+                </svg>
+
+                Integrated frontend with backend services to ensure seamless data flow.
+              </li>
+              <li>
+                <svg class="resume__icon">
+                  <use xlink:href="#rhombus"></use>
+                </svg>
+
+                Increased test coverage by writing unit tests with Jest, ensuring code reliability and quality.
+              </li>
+            </ul>
+            <br />
+            <span class="technologies">Technologies:</span> 
+            Vue 2, Vuex, Vue Router, i18n, SCSS, Jest
+            
           </div>
         </div>
         <!-- experience single item -->
         <div class="row g-0 resume-lines__item animate-in-up">
-          <div class="resume-lines__item-block-s col-12 col-md-2">
-            <span class="resume-lines__date animate-in-up">2020 - 2021</span>
-            <span class="resume-lines__date animate-in-up">1 year 2 months</span>
+          <div class="row resume-lines__item-block">
+            <div class="resume-lines__item-block-half">
+              <span class="resume-lines__date animate-in-up">2020/04 - 2021/05</span>
+              <span class="resume-lines__date animate-in-up">1 year 2 months</span>
+            </div>
+            <div class="resume-lines__item-block-half">
+              <h5 class="resume-lines__title animate-in-up">Frontend Developer</h5>
+              <p class="resume-lines__source animate-in-up">Self-Employed</p>
+            </div>
           </div>
-          <div class="resume-lines__item-block-m col-12 col-md-5">
-            <h5 class="resume-lines__title animate-in-up">Frontend Developer</h5>
-            <p class="resume-lines__source animate-in-up">Self Employed</p>
-          </div>
-          <div class="resume-lines__item-block-m col-12 col-md-5">
-            <p class="small resume-lines__descr animate-in-up">
-              Worked with the MERN stack, Vue 2, React, and native JavaScript.
-              <br>
-              Technologies: Vue 2, React.js, Node.js, MongoDB, Express.js, SCSS, JavaScript
-            </p>
+          
+          <div class="col-12 resume-margin-top">
+            <ul class=" small animate-in-up resume-lines__descr">
+              <li>
+                <svg class="resume__icon">
+                  <use xlink:href="#rhombus"></use>
+                </svg>
+
+                Developed a full-stack recommendation system using the MERN stack (MongoDB, Express, React, Node.js) to provide personalized recommendations through collaborative filtering techniques.
+              </li>
+              <li>
+                <svg class="resume__icon">
+                  <use xlink:href="#rhombus"></use>
+                </svg>
+
+                Integrated Vue 2, React, and native JavaScript to build responsive and dynamic front-end components, enhancing user experience and interactivity.
+              </li>
+              <li>
+                <svg class="resume__icon">
+                  <use xlink:href="#rhombus"></use>
+                </svg>
+
+                Worked on both the front-end and back-end, ensuring seamless communication between the user interface and the database for real-time data processing.
+              </li>
+            </ul>
+            <br />
+            <span class="technologies">Technologies:</span> 
+            Vue 2, React.js, Node.js, MongoDB, Express.js, SCSS, JavaScript
+
           </div>
         </div>
 
         <!-- experience single item -->
         <div class="row g-0 resume-lines__item animate-in-up">
-          <div class="resume-lines__item-block-s col-12 col-md-2">
-            <span class="resume-lines__date animate-in-up">2020 - 2020</span>
-            <span class="resume-lines__date animate-in-up">4 months</span>
+          <div class="row resume-lines__item-block">
+            <div class="resume-lines__item-block-half">
+              <span class="resume-lines__date animate-in-up">2020/01 - 2020/04</span>
+              <span class="resume-lines__date animate-in-up">4 months</span>
+            </div>
+            <div class="resume-lines__item-block-half">
+              <h5 class="resume-lines__title animate-in-up">Junior Frontend Developer</h5>
+              <p class="resume-lines__source animate-in-up">in the Varion</p>
+            </div>
           </div>
-          <div class="resume-lines__item-block-m col-12 col-md-5">
-            <h5 class="resume-lines__title animate-in-up">Junior Frontend Developer</h5>
-            <p class="resume-lines__source animate-in-up">in the Varion</p>
-          </div>
-          <div class="resume-lines__item-block-m col-12 col-md-5">
-            <p class="small resume-lines__descr animate-in-up">
-              Developed games with Phaser.js. Developed new features with Vue 2 and native JavaScript
-              <br>
-              Technologies: Vue 2, JavaScript, Phaser.js, CSS, HTML
-            </p>
+          
+          <div class="col-12 resume-margin-top">
+            <ul class=" small animate-in-up resume-lines__descr">
+              <li>
+                <svg class="resume__icon">
+                  <use xlink:href="#rhombus"></use>
+                </svg>
+
+                Developed interactive games using Phaser.js, focusing on optimizing performance, game mechanics, and user experience.              </li>
+              <li>
+                <svg class="resume__icon">
+                  <use xlink:href="#rhombus"></use>
+                </svg>
+
+                Built responsive and adaptive front-end components using Vue 2 and native JavaScript, ensuring seamless functionality across devices and screen sizes.              
+              </li>
+            </ul>
+            <br />
+            <span class="technologies">Technologies:</span> 
+            Vue 2, JavaScript, Phaser.js, CSS, HTML
+
           </div>
         </div>
       </div>
@@ -166,69 +331,35 @@
     <!-- Content Block - H3 Block End -->
 
     <!-- Content Block - Tools List Start -->
-    <div class="content__block grid-block block-large">
-      <!-- Tools List Start -->
-      <div class="tools-cards d-flex justify-content-start flex-wrap">
-        <!-- tools simgle item -->
-        <div class="tools-cards__item d-flex grid-item-s animate-card-5">
-          <div class="tools-cards__card">
-            <img class="tools-cards__icon animate-in-up" src="@/assets/img/icon-vue.svg" alt="Tools Icon">
-            <h6 class="tools-cards__caption animate-in-up">Vue</h6>
-          </div>
-        </div>
-        <!-- tools simgle item -->
-        <div class="tools-cards__item d-flex grid-item-s animate-card-5">
-          <div class="tools-cards__card">
-            <img class="tools-cards__icon animate-in-up" src="@/assets/img/icon-react.svg" alt="Tools Icon">
-            <h6 class="tools-cards__caption animate-in-up">React</h6>
-          </div>
-        </div>
-        <!-- tools simgle item -->
-        <div class="tools-cards__item d-flex grid-item-s animate-card-5">
-          <div class="tools-cards__card">
-            <img class="tools-cards__icon animate-in-up" src="@/assets/img/icon-solid.svg" alt="Tools Icon">
-            <h6 class="tools-cards__caption animate-in-up">Solid.JS</h6>
-          </div>
-        </div>
-        <!-- tools simgle item -->
-        <div class="tools-cards__item d-flex grid-item-s animate-card-5">
-          <div class="tools-cards__card">
-            <img class="tools-cards__icon animate-in-up" src="@/assets/img/icon-tailwind.svg" alt="Tools Icon">
-            <h6 class="tools-cards__caption animate-in-up">Tailwind CSS</h6>
-          </div>
-        </div>
-        <!-- tools simgle item -->
-        <!-- <div class="tools-cards__item d-flex grid-item-s animate-card-5">
-          <div class="tools-cards__card">
-            <img class="tools-cards__icon animate-in-up" src="img/icons/icon-blender.svg" alt="Tools Icon">
-            <h6 class="tools-cards__caption animate-in-up">Blender</h6>
-          </div>
-        </div> -->
-        <!-- tools simgle item -->
-        <div class="tools-cards__item d-flex grid-item-s animate-card-5">
-          <div class="tools-cards__card">
-            <img class="tools-cards__icon animate-in-up" src="@/assets/img/icon-html.svg" alt="Tools Icon">
-            <h6 class="tools-cards__caption animate-in-up">HTML5</h6>
-          </div>
-        </div>
-        <!-- tools simgle item -->
-        <div class="tools-cards__item d-flex grid-item-s animate-card-5">
-          <div class="tools-cards__card">
-            <img class="tools-cards__icon animate-in-up" src="@/assets/img/icon-css.svg" alt="Tools Icon">
-            <h6 class="tools-cards__caption animate-in-up">CSS3</h6>
-          </div>
-        </div>
-      </div>
-    </div>
+    <Tools />
+
+    <Testimonials />
   </section>
 </template>
 
 <script setup>
 import { useAnimateInUp } from '@/composables/useAnimateInUp';
 import { useAnimateCard5 } from '@/composables/useAnimateCard5';
+import Testimonials from '@/components/Testimonials.vue';
+import Subtitle from '@/components/Subtitle.vue';
+import { computed } from 'vue';
+import Tools from './Tools.vue';
 
 useAnimateInUp()
 useAnimateCard5()
+
+const startDate = new Date('2025-01-01')
+const currentDate = new Date()
+
+const lastWorkTime = computed(() => {
+  const yearDiff = currentDate.getFullYear() === startDate.getFullYear() 
+    ? 0
+    : currentDate.getFullYear() - startDate.getFullYear()
+
+  const monthDiff = currentDate.getMonth() - startDate.getMonth()
+
+  return yearDiff ? `${yearDiff} years ${monthDiff}` :  `${monthDiff} months`
+})
 </script>
 
 <style>

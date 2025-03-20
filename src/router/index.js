@@ -3,11 +3,13 @@ import { isScrolling } from '@/state/useScrollState';
 
 import Home from '@/components/Home.vue'
 import About from '@/components/About.vue'
+import Portfolio from '@/components/Portfolio.vue'
 import Resume from '@/components/Resume.vue'
 import Contacts from '@/components/Contacts.vue'
 
 const routes = [
   { path: '/', component: Home },
+  { path: '/portfolio', component: Portfolio },
   { path: '/about', component: About },
   { path: '/resume', component: Resume },
   { path: '/contacts', component: Contacts },
@@ -18,10 +20,9 @@ const router = createRouter({
   routes,
   scrollBehavior(to, from) {
     if (!isScrolling.value) {
-      console.log('Manual navigation detected');
-
       const sectionIdMap = {
         '/': 'home-page', 
+        '/portfolio': 'portfolio',
         '/about': 'about',
         '/resume': 'resume',
         '/contacts': 'contacts',
@@ -34,7 +35,6 @@ const router = createRouter({
         const currentScrollY = window.scrollY;
         const elementOffsetTop = element.offsetTop;
 
-        // Only scroll if user is far from the target section
         if (Math.abs(currentScrollY - elementOffsetTop) > 50) {
           return {
             el: element,
@@ -44,10 +44,9 @@ const router = createRouter({
       }
     }
 
-    // Reset flag for future navigation
     isScrolling.value = false;
 
-    return false; // No scrolling if programmatic navigation
+    return false; 
   
     // console.log(to, ' to')
     // const sectionIdMap = {

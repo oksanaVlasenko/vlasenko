@@ -21,6 +21,20 @@
         </li>
         <li class="menu__item">
           <router-link 
+            to="/portfolio" 
+            class="menu__link btn"
+            exact-active-class="active"
+          >
+            <span class="menu__caption">Portfolio</span>
+            <svg
+              class="header__trigger-icon"
+            >
+              <use xlink:href="#dots"></use>
+            </svg>
+          </router-link>
+        </li>
+        <li class="menu__item">
+          <router-link 
             to="/about" 
             class="menu__link btn"
             exact-active-class="active"
