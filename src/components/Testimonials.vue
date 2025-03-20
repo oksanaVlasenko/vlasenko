@@ -34,6 +34,19 @@
                 <div class="testimonials-card__descr">
                   <p  class="tooltip-line-clamp">{{ testimonial.testimonial }}</p>
                 </div>
+
+                <div class="testimonials-card__btnholder animate-in-up">
+                  <a class="btn mobile-vertical btn-line btn-transparent slide-right" target="_blank" href="https://www.linkedin.com/in/oksana-vlasenko-28b53919b/details/recommendations/?detailScreenTabIndex=0">
+                    <span class="btn-caption">
+                      View on LinkedIn
+
+                      <svg class="testimonials__icon">
+                        <use xlink:href="#arrowRight"></use>
+                      </svg>
+                    </span>
+                    
+                  </a>
+                </div>
               </div>
             </div>
           </div>
