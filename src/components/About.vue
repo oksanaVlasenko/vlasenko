@@ -15,7 +15,7 @@
         </div>
         <div class="achievements__item d-flex flex-column grid-item animate-card-3">
           <div class="achievements__card">
-            <p class="achievements__number">6+</p>
+            <p class="achievements__number">8+</p>
             <p class="achievements__descr">Projects done</p>
           </div>
         </div>
