@@ -68,6 +68,113 @@
       <!-- Experience Lines Start -->
       <div class="container-fluid p-0 resume-lines">
         <!-- experience single item -->
+         <div class="row g-0 resume-lines__item animate-in-up">
+          <div class="row resume-lines__item-block">
+            <div class="resume-lines__item-block-half">
+              <span class="resume-lines__date animate-in-up">2025/07 – present</span>
+              <span class="resume-lines__date animate-in-up">{{ lastWorkTimeSense }}</span>
+            </div>
+            <div class="resume-lines__item-block-half">
+              <h5 class="resume-lines__title animate-in-up">Senior Frontend Developer</h5>
+              <p class="resume-lines__source animate-in-up">in the Sense Bank</p>
+            </div>
+          </div>
+
+          <div class="col-12 resume-margin-top">
+            <ul class=" small animate-in-up resume-lines__descr">
+              <li>
+                <svg class="resume__icon">
+                  <use xlink:href="#rhombus"></use>
+                </svg>
+                Developing and maintaining two large-scale production systems: a legacy Vue 2 application and a modern Vue 3 application, ensuring long-term stability, performance, and maintainability.
+              </li>
+
+              <li>
+                <svg class="resume__icon">
+                  <use xlink:href="#rhombus"></use>
+                </svg>
+                Leading development of a new Vue 3 application entirely from scratch — including architecture design, implementation of all frontend functionality, backend integration, and production rollout.
+              </li>
+
+              <li>
+                <svg class="resume__icon">
+                  <use xlink:href="#rhombus"></use>
+                </svg>
+                Implementing and maintaining a lightweight backend layer using Node.js + Express.js (controllers, services, routing, Redis caching, automated tests) as a communication bridge between frontend and core backend systems.
+              </li>
+
+              <li>
+                <svg class="resume__icon">
+                  <use xlink:href="#rhombus"></use>
+                </svg>
+                Participating in cross-team collaboration with backend, QA, BA, DevOps, and security teams; contributing to architectural decisions and planning.
+              </li>
+
+              <li>
+                <svg class="resume__icon">
+                  <use xlink:href="#rhombus"></use>
+                </svg>
+                Conducting code reviews, enforcing coding standards, improving consistency and overall code quality.
+              </li>
+
+              <li>
+                <svg class="resume__icon">
+                  <use xlink:href="#rhombus"></use>
+                </svg>
+                Working with CI/CD pipelines using Jenkins, Bitbucket, OKD, monitoring deployments and ensuring smooth release flow.
+              </li>
+
+              <li>
+                <svg class="resume__icon">
+                  <use xlink:href="#rhombus"></use>
+                </svg>
+                Supporting and improving the existing Webpack-based project and co-leading the migration to Vite, improving build times and developer experience.
+              </li>
+
+              <li>
+                <svg class="resume__icon">
+                  <use xlink:href="#rhombus"></use>
+                </svg>
+                Delivering new product features and continuously optimizing legacy modules to reduce complexity and improve performance.
+              </li>
+
+              <!-- Key Achievements -->
+
+              <li>
+                <svg class="resume__icon">
+                  <use xlink:href="#rhombus"></use>
+                </svg>
+                Delivered a complete Vue 3 application with backend logic in just ~1.5 months, acting as the sole developer on the project.
+              </li>
+
+              <li>
+                <svg class="resume__icon">
+                  <use xlink:href="#rhombus"></use>
+                </svg>
+                Successfully migrated a large production codebase from Webpack to Vite, significantly reducing build times and improving stability.
+              </li>
+
+              <li>
+                <svg class="resume__icon">
+                  <use xlink:href="#rhombus"></use>
+                </svg>
+                Improved performance and maintainability of the legacy Vue 2 system through deep refactoring and technical debt reduction.
+              </li>
+
+              <li>
+                <svg class="resume__icon">
+                  <use xlink:href="#rhombus"></use>
+                </svg>
+                Strengthened cross-team communication processes, reducing blockers and increasing delivery speed.
+              </li>
+            </ul>
+            <br>
+            <span class="technologies">Technologies:</span> 
+            Vue 2, Vue 3, Vuex, Pinia, Vuetify 2/3, TypeScript, Vue Router, Node.js, 
+            Express.js, Redis, Vite, Webpack, Jest, Jenkins, Bitbucket, OKD
+          </div>
+        </div>
+
         <div class="row g-0 resume-lines__item animate-in-up">
           <div class="row resume-lines__item-block">
             <div class="resume-lines__item-block-half">
@@ -130,7 +237,7 @@
             <br>
             <span class="technologies">Technologies:</span> 
             Next.js, Google Generative AI, Google Custom Search API, AWS S3, Nspell,
-            Prisma (PostgreSQL), NextAuth.js, Tailwind CSS, TypeScript,
+            Prisma (PostgreSQL), NextAuth.js, Tailwind CSS, TypeScript
           </div>
         </div>
 
@@ -155,7 +262,6 @@
                   <use xlink:href="#rhombus"></use>
                 </svg>
                 Contributed to the development of a robust micro frontend solution using Solid.js, ensuring efficient feature delivery and seamless integrations.
-
               </li>
               <li>
                 <svg class="resume__icon">
@@ -349,6 +455,7 @@ useAnimateInUp()
 useAnimateCard5()
 
 const startDate = new Date('2025-01-01')
+const startDateSense = new Date('2025-07-01')
 const currentDate = new Date()
 
 const lastWorkTime = computed(() => {
@@ -357,6 +464,16 @@ const lastWorkTime = computed(() => {
     : currentDate.getFullYear() - startDate.getFullYear()
 
   const monthDiff = currentDate.getMonth() - startDate.getMonth()
+
+  return yearDiff ? `${yearDiff} years ${monthDiff}` :  `${monthDiff} months`
+})
+
+const lastWorkTimeSense = computed(() => {
+  const yearDiff = currentDate.getFullYear() === startDateSense.getFullYear() 
+    ? 0
+    : currentDate.getFullYear() - startDateSense.getFullYear()
+
+  const monthDiff = currentDate.getMonth() - startDateSense.getMonth()
 
   return yearDiff ? `${yearDiff} years ${monthDiff}` :  `${monthDiff} months`
 })

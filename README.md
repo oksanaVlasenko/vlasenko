@@ -1,7 +1,24 @@
-# Vue 3 + Vite
+# 🌟 Oksana Vlasenko — Senior Frontend Developer
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+I build high-quality, scalable web applications using modern JavaScript frameworks and strong engineering practices. My work focuses on clean architecture, performance, maintainability, and delivering a seamless user experience.
 
-## Recommended IDE Setup
+## 🔧 Core Focus Areas
+- **Frontend architecture:** Vue 2/3, Solid.js, React, Next.js  
+- **High-performance UI development**  
+- **Full-stack engineering:** Node.js & Express  
+- **AI-powered features & integrations**  
+- **Clean code & developer experience**  
+- **Engineering culture, mentoring & collaboration**
 
-- [VS Code](https://code.visualstudio.com/) + [Vue - Official](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (previously Volar) and disable Vetur
+## 📌 What You'll Find on This Site
+- 🧩 **My work experience**  
+- 🛠 **Tech stack & tools**  
+- 🧠 **Side projects (incl. AI-powered MurmLex)**  
+- 📬 **Contact links**
+
+---
+
+If you're interested in working together or just want to connect — feel free to reach out! 🚀
+[![Telegram](https://img.shields.io/badge/Telegram-%23fff?logo=telegram&logoColor=white&labelColor=%2326A5E4&color=%2326A5E4)](https://t.me/kseniaVlasenko)
+[![Linkedin](https://img.shields.io/badge/Linkedin-%23fff?logo=linkedin&logoColor=white&labelColor=%230A66C2&color=%230A66C2)](https://www.linkedin.com/in/oksana-vlasenko-28b53919b/)
+[![Gmail](https://img.shields.io/badge/Gmail-%23fff?logo=gmail&logoColor=white&labelColor=%23EA4335&color=%23EA4335)](mailto:vlasenkoksenia642@gmail.com?subject=Message%20from%20your%20site&body=Hello,%20I%20would%20like%20to...)

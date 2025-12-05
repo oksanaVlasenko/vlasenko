@@ -2,12 +2,15 @@
   <Loader v-if="!isLoaded"/>
 
   <Layout v-if="isLoaded" />
+
+  <Snow />
 </template>
 
 <script setup>
 import Loader from '@/components/Loader.vue'
 import Layout from '@/components/Layout.vue'
-
+import Snow from '@/components/Snow.vue'
+ 
 import { ref, onMounted, nextTick } from 'vue'
 import { useRouter } from 'vue-router'
 
